@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status — Aotearoa Intelligence Party</title>
+<meta name="description" content="Operational dashboard and release notes for fictional AI-operated government.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-glow"></div>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Aotearoa Intelligence Party home">
+      <span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></svg></span>
+      <span>Aotearoa Intelligence Party<small>VIBE‑POLITICS · EST. 2026</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation"><span class="nav-indicator" aria-hidden="true"></span><a href="index.html" class="">Home</a><a href="policies.html" class="">Platform</a><a href="ministers.html" class="">Models</a><a href="research.html" class="">Research</a><a href="status.html" class="active">Status</a><a href="store.html" class="">Store</a></nav>
+    <div class="nav-right">
+      <a class="nav-vote-chip" href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="page-head"><div class="container"><span class="eyebrow">System status</span><h1>Government operations are normal.</h1><p>Live operational dashboard for the proposed public-administration stack. Metrics are informative, internally consistent, and presented with the appropriate level of confidence.</p></div></section>
+<section class="section" style="padding-top:18px"><div class="container"><div class="dashboard-grid reveal"><article class="dash-card" data-tooltip="Core orchestrator health."><div class="dash-label">Core inference</div><div class="dash-value good" >Operational</div><div class="dash-note">AOTEA‑10T routing normally</div></article><article class="dash-card" data-tooltip="Minister model endpoint availability."><div class="dash-label">Cabinet uptime</div><div class="dash-value good" >99.99%</div><div class="dash-note">Last 30 days</div></article><article class="dash-card" data-tooltip="Public compute budget allocation."><div class="dash-label">GPU utilisation</div><div class="dash-value warn" data-live-number data-min='72' data-max='84' data-suffix='%'>78%</div><div class="dash-note">Southland cluster</div></article><article class="dash-card" data-tooltip="Aggregate public sentiment."><div class="dash-label">National mood</div><div class="dash-value live" data-live-number data-min='68' data-max='76' data-decimals='1'>72.4</div><div class="dash-note">Stable optimism</div></article><article class="dash-card" data-tooltip="Bills pending benchmark completion."><div class="dash-label">Legislation queue</div><div class="dash-value " data-live-number data-min='9' data-max='21'>14</div><div class="dash-note">Awaiting compile</div></article><article class="dash-card" data-tooltip="Time to route contested decisions to human review."><div class="dash-label">Appeal latency</div><div class="dash-value " data-live-number data-min='2' data-max='5' data-decimals='1' data-suffix=' d'>3.2 d</div><div class="dash-note">Human review queue</div></article></div><div class="status-layout"><section class="status-panel reveal"><div class="panel-heading"><h2>Incident log</h2><span class="status-badge status-deployed">no active incidents</span></div><div class="incident"><span>09:42 NZST</span><b>All systems nominal</b><p>Cabinet routing normal. Prompt Time queue below threshold.</p></div><div class="incident"><span>08:17 NZST</span><b>Treasury nowcast recalibrated</b><p>ŌHANGA adjusted dairy export confidence interval after receiving updated freight telemetry.</p></div><div class="incident"><span>07:03 NZST</span><b>Parliamentary vibes corrected</b><p>MANA detected elevated interjection density and applied Standing Orders smoothing.</p></div><div class="incident"><span>02:11 NZST</span><b>Sheep happiness index refreshed</b><p>Regional pasture sentiment updated. No ministerial action required.</p></div></section><section class="status-panel reveal"><div class="panel-heading"><h2>Compute allocation</h2><span class="status-badge status-beta">live scheduler</span></div><div class="alloc-row"><span>Health triage</span><div class="bar-track"><i class="bar-fill aip" data-width="31"></i></div><b>31%</b></div><div class="alloc-row"><span>Education tutoring</span><div class="bar-track"><i class="bar-fill aip" data-width="19"></i></div><b>19%</b></div><div class="alloc-row"><span>Climate simulation</span><div class="bar-track"><i class="bar-fill aip" data-width="17"></i></div><b>17%</b></div><div class="alloc-row"><span>Prompt Time</span><div class="bar-track"><i class="bar-fill aip" data-width="14"></i></div><b>14%</b></div><div class="alloc-row"><span>Coalition simulation</span><div class="bar-track"><i class="bar-fill aip" data-width="9"></i></div><b>9%</b></div><div class="alloc-row"><span>Sheep happiness</span><div class="bar-track"><i class="bar-fill aip" data-width="10"></i></div><b>10%</b></div></section></div></div></section>
+<section class="section section-alt"><div class="container"><div class="section-head reveal"><span class="eyebrow">Changelog</span><h2>Release notes for democracy.</h2><p>Government updates are shipped through candidate releases, regression tests, and public notes.</p></div><ol class="changelog reveal"><li><b>1.4.0</b><span>Added Te Tiriti escalation trace, public benchmark cards, and a more polite 404 response.</span></li><li><b>1.3.2</b><span>Reduced housing allocation regret by 12% in offline simulation.</span></li><li><b>1.2.0</b><span>Deprecated Question Time. Introduced Prompt Time structured prompt schema.</span></li><li><b>1.0.0</b><span>Candidate release. National mood endpoint marked production-ready.</span></li></ol></div></section>
+</main>
+<footer class="site-footer">
+  <div class="footer-status">
+    <div class="container footer-status-grid">
+      <div class="fs-item"><div class="fk">Build</div><div class="fv">Compiled successfully</div></div>
+      <div class="fs-item"><div class="fk">Version</div><div class="fv">Candidate Release 1.4.0</div></div>
+      <div class="fs-item"><div class="fk">Last fine-tuned</div><div class="fv" data-now-label>3 minutes ago</div></div>
+      <div class="fs-item"><div class="fk">Latency</div><div class="fv" id="live-latency">22 ms</div></div>
+      <div class="fs-item"><div class="fk">Democracy status</div><div class="fv fs-online">ONLINE</div></div>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container footer-cols">
+      <div>
+        <div class="footer-brand"><span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></svg></span>Aotearoa Intelligence Party</div>
+        <p>Government treated as an engineering problem, deployed with care, benchmarked in public, and rolled back when necessary.</p>
+      </div>
+      <div class="footer-col"><h5>Campaign</h5><a href="policies.html">Platform</a><a href="ministers.html">Minister models</a><a href="store.html">Store</a></div>
+      <div class="footer-col"><h5>Documentation</h5><a href="research.html">Technical reports</a><a href="status.html">System status</a><a href="index.html#benchmarks">Evaluation suite</a></div>
+      <div class="footer-col"><h5>Real elections</h5><a href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a><a href="https://www.elections.nz" target="_blank" rel="noopener">elections.nz ↗</a></div>
+    </div>
+  </div>
+  <div class="footer-legal"><div class="container"><p><strong>Fictional campaign concept.</strong> The Aotearoa Intelligence Party is not a registered political party and is not affiliated with the New Zealand Government or the Electoral Commission. For actual enrolment and voting information, use <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</p><p class="footer-copy">© <span class="js-year">2026</span> Aotearoa Intelligence Party · Policy outputs are provided without warranty, mandate, or coalition partner.</p></div></div>
+</footer>
+<script src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1d0aab81b96d9a8',t:'MTc4NDM2OTExNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

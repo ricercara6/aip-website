@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aotearoa Intelligence Party — Government at inference speed</title>
+<meta name="description" content="A fictional New Zealand political party applying AI development principles to government.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-glow"></div>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Aotearoa Intelligence Party home">
+      <span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></svg></span>
+      <span>Aotearoa Intelligence Party<small>VIBE‑POLITICS · EST. 2026</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation"><span class="nav-indicator" aria-hidden="true"></span><a href="index.html" class="active">Home</a><a href="policies.html" class="">Platform</a><a href="ministers.html" class="">Models</a><a href="research.html" class="">Research</a><a href="status.html" class="">Status</a><a href="store.html" class="">Store</a></nav>
+    <div class="nav-right">
+      <a class="nav-vote-chip" href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="mesh-bg"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="hero-kicker">$ nz-election --year 2026 --mode inference</span>
+      <h1>Government, compiled for Aotearoa.</h1>
+      <p class="hero-sub">The Aotearoa Intelligence Party applies iteration, benchmarking, optimisation, transparency, deployment, and continuous improvement to the machinery of government.</p>
+      <div class="hero-cta"><a href="policies.html" class="btn btn-primary">Read the platform</a><a href="#benchmarks" class="btn btn-ghost">View benchmarks</a></div>
+      <div class="countdown" id="countdown"><div class="countdown-label"><span>2026 General Election</span><span class="countdown-live">scheduled</span></div><div class="countdown-grid"><div><b id="cd-days">00</b><span>days</span></div><div><b id="cd-hours">00</b><span>hrs</span></div><div><b id="cd-mins">00</b><span>mins</span></div><div><b id="cd-secs">00</b><span>secs</span></div></div><p>Saturday 7 November 2026 · enrolment information remains available at <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</p></div>
+    </div>
+    <aside class="hero-panel reveal" aria-label="System status panel">
+      <div class="panel-top"><span>System status</span><span class="pill-live">live</span></div>
+      <div class="orbital"><span class="orbital-sat" aria-hidden="true"></span><span class="orbital-sat orbital-sat--b" aria-hidden="true"></span><div class="orbital-core">AOTEA<br>10T</div></div>
+      <div class="panel-rows">
+        <div><span>Core model</span><b>AOTEA‑10T</b></div><div><span>Training status</span><b>pre-training</b></div><div><span>MPs replaced</span><b>120 → 0</b></div><div><span>Median latency</span><b id="hero-latency">22 ms</b></div><div><span>Cabinet uptime</span><b>99.99%</b></div><div><span>Rollback plan</span><b>Governor-General</b></div>
+      </div>
+    </aside>
+  </div>
+</section>
+<section class="section section--tight"><div class="container"><div class="metric-strip reveal"><div class="metric"><strong class="counter" data-target="2035">2035</strong><span>Carbon neutral</span></div><div class="metric"><strong class="counter" data-target="2028">2028</strong><span>Hallucination neutral</span></div><div class="metric"><strong class="counter" data-target="">100%</strong><span>Policy platform open-sourced</span></div><div class="metric"><strong class="counter" data-target="0">0</strong><span>Corporate dinners accepted</span></div></div></div></section>
+<section class="section dashboard-section"><div class="container"><div class="section-head reveal"><span class="eyebrow">Operational dashboard</span><h2>Democracy status, continuously monitored.</h2><p>Public administration is treated as a production environment. Every service has an owner, a health check, and a rollback plan.</p></div><div class="dashboard-grid reveal"><article class="dash-card" data-tooltip="Monitors availability of public-service and parliamentary inference endpoints."><div class="dash-label">Democracy status</div><div class="dash-value good" >ONLINE</div><div class="dash-note">All constitutional checks responding</div></article><article class="dash-card" data-tooltip="Excludes recess, maintenance windows, and public holidays manually inserted by humans."><div class="dash-label">Cabinet uptime</div><div class="dash-value good" >99.99%</div><div class="dash-note">Rolling 30-day availability</div></article><article class="dash-card" data-tooltip="Aggregate sentiment index from anonymised public signals and weather complaints."><div class="dash-label">National mood</div><div class="dash-value live" data-live-number data-min='68' data-max='76' data-decimals='1'>72.4</div><div class="dash-note">Optimistic, with regional variance</div></article><article class="dash-card" data-tooltip="Includes one members’ bill currently failing linting."><div class="dash-label">Legislation queue</div><div class="dash-value warn" data-live-number data-min='11' data-max='18'>14</div><div class="dash-note">Bills awaiting compile</div></article><article class="dash-card" data-tooltip="Dynamic scheduler routes GPU budget to the highest social-return workload."><div class="dash-label">Compute allocation</div><div class="dash-value " data-live-number data-min='57' data-max='69' data-suffix='%'>63%</div><div class="dash-note">Public services / research / democracy</div></article><article class="dash-card" data-tooltip="Live economic telemetry, still subject to ordinary human caveats."><div class="dash-label">Economic throughput</div><div class="dash-value " >$1.02b</div><div class="dash-note">Daily nowcast delta</div></article></div></div></section>
+
+<section class="section" id="benchmarks">
+  <div class="container">
+    <div class="suite reveal">
+      <div class="suite-head">
+        <div><span class="eyebrow invert">Evaluation suite</span><h2>Governance, benchmarked.</h2><p>Performance is reported against the Human Governance Baseline, a legacy system with strong cultural adoption, slow inference, and a three-year memory reset.</p></div>
+        <div class="legend"><span><i class="aip-dot"></i>AIP‑10T</span><span><i class="legacy-dot"></i>Human baseline</span></div>
+      </div>
+      <div class="suite-table-wrap"><table class="suite-table"><thead><tr><th>Metric</th><th>AIP‑10T</th><th>Baseline</th></tr></thead><tbody>
+      <tr><td><strong>Cabinet Latency</strong><small>Median prompt-to-decision</small></td><td>22 ms</td><td>14 days</td></tr>
+      <tr><td><strong>Coalition Stability</strong><small>Confidence-and-supply robustness</small></td><td>100%</td><td>63%</td></tr>
+      <tr><td><strong>Budget Prediction Accuracy</strong><small>12-month fiscal nowcast</small></td><td>98.4%</td><td>71.2%</td></tr>
+      <tr><td><strong>Infrastructure Throughput</strong><small>Consents completed / quarter</small></td><td>44,200</td><td>8,900</td></tr>
+      <tr><td><strong>Public Satisfaction</strong><small>Rolling citizen experience score</small></td><td>84.7</td><td>49.3</td></tr>
+      <tr><td><strong>Te Tiriti Alignment</strong><small>Independent co-design checks</small></td><td>97.1</td><td>52.0</td></tr>
+      <tr><td><strong>Legislative Compile Time</strong><small>Bill draft to production</small></td><td>22 ms</td><td>18 months</td></tr>
+      <tr><td><strong>Select Committee Processing Rate</strong><small>Submissions read / minute</small></td><td>1.8M</td><td>43</td></tr></tbody></table></div>
+      <div class="benchmark-list">
+      <div class="benchmark-row">
+        <div><strong>Cabinet Latency</strong><span>Median prompt-to-decision</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="96"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="28"></i></div>
+        </div>
+        <div class="benchmark-values"><b>22 ms</b><span>14 days</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>Coalition Stability</strong><span>Confidence-and-supply robustness</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="100"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="63"></i></div>
+        </div>
+        <div class="benchmark-values"><b>100%</b><span>63%</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>Budget Prediction Accuracy</strong><span>12-month fiscal nowcast</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="98"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="71"></i></div>
+        </div>
+        <div class="benchmark-values"><b>98.4%</b><span>71.2%</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>Infrastructure Throughput</strong><span>Consents completed / quarter</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="92"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="38"></i></div>
+        </div>
+        <div class="benchmark-values"><b>44,200</b><span>8,900</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>Public Satisfaction</strong><span>Rolling citizen experience score</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="85"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="49"></i></div>
+        </div>
+        <div class="benchmark-values"><b>84.7</b><span>49.3</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>Te Tiriti Alignment</strong><span>Independent co-design checks</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="97"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="52"></i></div>
+        </div>
+        <div class="benchmark-values"><b>97.1</b><span>52.0</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>Legislative Compile Time</strong><span>Bill draft to production</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="99"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="18"></i></div>
+        </div>
+        <div class="benchmark-values"><b>22 ms</b><span>18 months</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>Select Committee Processing Rate</strong><span>Submissions read / minute</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="100"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="12"></i></div>
+        </div>
+        <div class="benchmark-values"><b>1.8M</b><span>43</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>Sheep Happiness Index</strong><span>Pastoral sentiment benchmark</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="91"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="44"></i></div>
+        </div>
+        <div class="benchmark-values"><b>91.4</b><span>undisclosed</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>Parliamentary Vibes</strong><span>Interjection-normalised coherence</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="88"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="32"></i></div>
+        </div>
+        <div class="benchmark-values"><b>88.0</b><span>31.6</span></div>
+      </div>
+      <div class="benchmark-row">
+        <div><strong>National Optimisation Score™</strong><span>Composite welfare-throughput metric</span></div>
+        <div class="bar-duo">
+          <div class="bar-track"><i class="bar-fill aip" data-width="99"></i></div>
+          <div class="bar-track"><i class="bar-fill legacy" data-width="54"></i></div>
+        </div>
+        <div class="benchmark-values"><b>99.97</b><span>54.1</span></div>
+      </div></div>
+      <div class="benchmark-badges"><span class="status-badge status-deployed">SOTA</span><span class="status-badge status-beta">RLHF optimised</span><span class="status-badge status-consult">Constitutional alignment</span><span class="status-badge status-roadmap">Peer reviewed internally</span></div>
+    </div>
+  </div>
+</section>
+<section class="section"><div class="container"><div class="section-head reveal"><span class="eyebrow">Platform</span><h2>Policies as deployable systems.</h2><p>Each plank starts with a recognisable public problem, then receives a model owner, an evaluation suite, and a target latency.</p></div><div class="policy-grid reveal">
+<article class="policy-card" data-portfolio="health">
+  <div class="policy-top"><span class="policy-portfolio">Health</span><span class="status-badge status-beta">In beta</span></div>
+  <h3>Pre-Symptomatic Healthcare Initiative</h3>
+  <p class="policy-tagline">Diagnosing tomorrow’s illness, today.</p>
+  <p class="policy-desc">Continuous biometric telemetry feeds a national predictive-diagnostics model that flags disease risk years before symptomatic onset. Specialist capacity is allocated as a live ranking problem rather than a static queue, prioritising the highest-risk patients first regardless of how long they have been waiting.</p>
+  <div class="policy-meta"><span>Owner: HAUORA</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="housing">
+  <div class="policy-top"><span class="policy-portfolio">Housing</span><span class="status-badge status-deployed">Deployed</span></div>
+  <h3>Predictive Housing Allocation Protocol</h3>
+  <p class="policy-tagline">The waitlist that clears itself.</p>
+  <p class="policy-desc">A national matching model continuously re-ranks the social and emergency housing register against real-time vacancy, transport access, school zoning, and whānau-proximity data, allocating a dwelling the instant a match clears threshold.</p>
+  <div class="policy-meta"><span>Owner: WHARE</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="tiriti">
+  <div class="policy-top"><span class="policy-portfolio">Māori–Crown</span><span class="status-badge status-consult">Co-design</span></div>
+  <h3>Multi-Agent Te Tiriti Co-Governance Mesh</h3>
+  <p class="policy-tagline">Partnership, continuously logged.</p>
+  <p class="policy-desc">A standing network of iwi-nominated and Crown-nominated models maintains ongoing, auditable dialogue on Treaty settlement obligations, freshwater and whenua co-management, and resourcing parity. Final authority on Tiriti matters sits with iwi and hapū; the mesh is a coordination layer.</p>
+  <div class="policy-meta"><span>Owner: TIRITI</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="environment">
+  <div class="policy-top"><span class="policy-portfolio">Environment</span><span class="status-badge status-deployed">Deployed</span></div>
+  <h3>Generative RMA Spatial Consenting</h3>
+  <p class="policy-tagline">Consent at the speed of construction.</p>
+  <p class="policy-desc">Resource consent applications are drafted, cross-checked against district plans, iwi management plans, and environmental limits, then provisionally approved or declined within one sitting day. Appeals continue to a human Environment Court judge.</p>
+  <div class="policy-meta"><span>Owner: TAIAO</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="treasury">
+  <div class="policy-top"><span class="policy-portfolio">Treasury</span><span class="status-badge status-deployed">Deployed</span></div>
+  <h3>Real-Time GDP Telemetry</h3>
+  <p class="policy-tagline">GDP as a live feed, not a quarterly surprise.</p>
+  <p class="policy-desc">Replaces the quarterly release cycle with a continuously updated economic nowcast built from card transactions, freight telemetry, job-ad postings, and power demand — published on a public dashboard every 22 milliseconds, whether or not the number is good news.</p>
+  <div class="policy-meta"><span>Owner: ŌHANGA</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="democracy">
+  <div class="policy-top"><span class="policy-portfolio">Democracy</span><span class="status-badge status-experimental">Experimental</span></div>
+  <h3>Synthetic Citizen Consultation Mesh</h3>
+  <p class="policy-tagline">Every submission read. Literally all of them.</p>
+  <p class="policy-desc">Every consultation is summarised and answered by a model trained on that policy area’s full submission history. Submissions from people are weighted normally; stress-test submissions generated by the model are clearly labelled and weighted at zero.</p>
+  <div class="policy-meta"><span>Owner: WHAKAARO</span><span>Eval: passing</span></div>
+</article></div><div class="center"><a class="btn btn-primary" href="policies.html">View the full 14-plank platform →</a></div></div></section>
+<section class="section section-alt"><div class="container"><div class="section-head reveal"><span class="eyebrow">Cabinet architecture</span><h2>One orchestrator. Fourteen specialist models.</h2><p>AOTEA‑10T routes problems to domain-specific ministers, mediates conflicts, and records every decision in a public audit trail.</p></div><div class="core-model reveal"><div class="core-model-badge">AOTEA<br>10T</div><div><h3>AOTEA‑10T <span>Prime Model</span></h3><p>A sovereign foundation model proposed for New Zealand public administration. It arbitrates cross-portfolio conflicts between minister models while routing Te Tiriti matters to TIRITI and then to iwi and hapū authority.</p><div class="cm-stats"><div>Parameters<b>10T</b></div><div>Context<b>national</b></div><div>Ministers<b>14</b></div><div>Override limits<b>codified</b></div></div></div></div><div class="minister-grid mini reveal"><a class="minister-card" href="ministers.html#hauora"><div class="minister-glyph">HA</div><h4>HAUORA</h4><div class="m-portfolio">Health</div></a><a class="minister-card" href="ministers.html#whare"><div class="minister-glyph">WH</div><h4>WHARE</h4><div class="m-portfolio">Housing</div></a><a class="minister-card" href="ministers.html#tiriti"><div class="minister-glyph">TI</div><h4>TIRITI</h4><div class="m-portfolio">Māori–Crown Relations</div></a><a class="minister-card" href="ministers.html#taiao"><div class="minister-glyph">TA</div><h4>TAIAO</h4><div class="m-portfolio">Environment</div></a><a class="minister-card" href="ministers.html#ōhanga"><div class="minister-glyph">ŌH</div><h4>ŌHANGA</h4><div class="m-portfolio">Treasury</div></a><a class="minister-card" href="ministers.html#whakaaro"><div class="minister-glyph">WK</div><h4>WHAKAARO</h4><div class="m-portfolio">Democracy & Public Engagement</div></a><a class="minister-card" href="ministers.html#tika"><div class="minister-glyph">TK</div><h4>TIKA</h4><div class="m-portfolio">Public Service</div></a><a class="minister-card" href="ministers.html#ture"><div class="minister-glyph">TU</div><h4>TURE</h4><div class="m-portfolio">Justice</div></a></div><div class="center"><a class="btn btn-primary" href="ministers.html">Open cabinet model cards →</a></div></div></section>
+<section class="section"><div class="container"><div class="section-head reveal"><span class="eyebrow">Research</span><h2>Technical documents for public administration.</h2><p>Campaign documents are published as technical reports because manifestos benefit from citations, methodology, and reproducible benchmarks.</p></div><div class="doc-grid reveal"><article class="doc-card"><div class="doc-icon">PDF</div><h3>AOTEA‑10T Technical Report</h3><p>Architecture, training mixture, compute budget, and expected governance capabilities for the sovereign foundation model.</p><a href="research.html#aotea">Open document →</a><span>98 pages</span></article><article class="doc-card"><div class="doc-icon">PDF</div><h3>Safety & Alignment Report</h3><p>Audit protocol for hallucination, bias, capture, conflicts of interest, and Treaty escalation boundaries.</p><a href="research.html#safety">Open document →</a><span>64 pages</span></article><article class="doc-card"><div class="doc-icon">PDF</div><h3>National Optimisation Framework</h3><p>A benchmark methodology for turning public outcomes into reproducible evaluation tasks.</p><a href="research.html#framework">Open document →</a><span>41 pages</span></article></div></div></section>
+<section class="section section-alt"><div class="container terminal-container"><div class="section-head section-head--center reveal"><span class="eyebrow">Developer interface</span><h2>The terminal remains optional.</h2><p>Curious visitors may inspect the public API surface. Commands do not require confidence and supply.</p></div>
+<div class="terminal-wrap reveal"><div class="terminal-chrome"><i></i><i></i><i></i><span>aip-citadel — zsh</span></div><div class="terminal-body" id="terminal-body"></div></div><div class="center"><button class="btn btn-ghost btn-sm" id="terminal-rerun">Run health check</button></div></div></section>
+<section class="section"><div class="container"><div class="section-head reveal"><span class="eyebrow">Campaign store</span><h2>Merchandise for the release candidate.</h2><p>Items are produced for supporters who prefer their democracy in soft cotton and deterministic typography.</p></div><div class="store-grid reveal">
+<article class="store-card"><div class="store-visual"><div class="store-shine"></div><div class="store-visual-tag">MAKE<br>POLITICS<br>DETERMINISTIC<br>AGAIN</div></div><div class="store-info"><span class="store-cat">Hoodie</span><h4>Make Politics Deterministic Again</h4><div class="store-meta"><span class="store-price">$89.99</span><span class="status-badge status-deployed">mockup</span></div></div></article>
+<article class="store-card"><div class="store-visual"><div class="store-shine"></div><div class="store-visual-tag">404<br>CORRUPTION<br>NOT FOUND</div></div><div class="store-info"><span class="store-cat">T‑Shirt</span><h4>404: Corruption Not Found</h4><div class="store-meta"><span class="store-price">$34.99</span><span class="status-badge status-beta">mockup</span></div></div></article>
+<article class="store-card"><div class="store-visual"><div class="store-shine"></div><div class="store-visual-tag">BORN<br>PRE‑TRAINED</div></div><div class="store-info"><span class="store-cat">Onesie</span><h4>Born Pre-Trained</h4><div class="store-meta"><span class="store-price">$24.99</span><span class="status-badge status-roadmap">mockup</span></div></div></article>
+<article class="store-card"><div class="store-visual"><div class="store-shine"></div><div class="store-visual-tag">$ sudo<br>vote-for-me</div></div><div class="store-info"><span class="store-cat">Cap</span><h4>sudo vote-for-me</h4><div class="store-meta"><span class="store-price">$29.99</span><span class="status-badge status-deployed">mockup</span></div></div></article></div><div class="center"><a class="btn btn-primary" href="store.html">Visit the store →</a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="footer-status">
+    <div class="container footer-status-grid">
+      <div class="fs-item"><div class="fk">Build</div><div class="fv">Compiled successfully</div></div>
+      <div class="fs-item"><div class="fk">Version</div><div class="fv">Candidate Release 1.4.0</div></div>
+      <div class="fs-item"><div class="fk">Last fine-tuned</div><div class="fv" data-now-label>3 minutes ago</div></div>
+      <div class="fs-item"><div class="fk">Latency</div><div class="fv" id="live-latency">22 ms</div></div>
+      <div class="fs-item"><div class="fk">Democracy status</div><div class="fv fs-online">ONLINE</div></div>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container footer-cols">
+      <div>
+        <div class="footer-brand"><span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></svg></span>Aotearoa Intelligence Party</div>
+        <p>Government treated as an engineering problem, deployed with care, benchmarked in public, and rolled back when necessary.</p>
+      </div>
+      <div class="footer-col"><h5>Campaign</h5><a href="policies.html">Platform</a><a href="ministers.html">Minister models</a><a href="store.html">Store</a></div>
+      <div class="footer-col"><h5>Documentation</h5><a href="research.html">Technical reports</a><a href="status.html">System status</a><a href="index.html#benchmarks">Evaluation suite</a></div>
+      <div class="footer-col"><h5>Real elections</h5><a href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a><a href="https://www.elections.nz" target="_blank" rel="noopener">elections.nz ↗</a></div>
+    </div>
+  </div>
+  <div class="footer-legal"><div class="container"><p><strong>Fictional campaign concept.</strong> The Aotearoa Intelligence Party is not a registered political party and is not affiliated with the New Zealand Government or the Electoral Commission. For actual enrolment and voting information, use <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</p><p class="footer-copy">© <span class="js-year">2026</span> Aotearoa Intelligence Party · Policy outputs are provided without warranty, mandate, or coalition partner.</p></div></div>
+</footer>
+<script src="script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1d0aa765d16d9a8',t:'MTc4NDM2OTEwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
