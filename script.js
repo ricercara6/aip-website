@@ -60,7 +60,10 @@
   const rerun=document.getElementById('terminal-rerun');if(rerun)rerun.addEventListener('click',play);if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){play();io.unobserve(body)}}),{threshold:.45});io.observe(body)}else play();
 })();
 (function(){
-  const chips=[...document.querySelectorAll('.filter-chip')],cards=[...document.querySelectorAll('[data-portfolio]')];if(!chips.length||!cards.length)return;chips.forEach(chip=>chip.addEventListener('click',()=>{chips.forEach(c=>c.classList.remove('active'));chip.classList.add('active');const f=chip.dataset.filter;cards.forEach(card=>{const show=f==='all'||card.dataset.portfolio===f;card.style.display=show?'':'none'; if(show){card.classList.remove('is-visible');requestAnimationFrame(()=>card.classList.add('is-visible'))}})}));
+  // Shared filter: policy cards filter on data-portfolio, incident rows on data-tag.
+  const chips=[...document.querySelectorAll('.filter-chip')],cards=[...document.querySelectorAll('[data-portfolio],[data-tag]')];if(!chips.length||!cards.length)return;
+  const tagOf=el=>el.dataset.portfolio||el.dataset.tag;
+  chips.forEach(chip=>chip.addEventListener('click',()=>{chips.forEach(c=>c.classList.remove('active'));chip.classList.add('active');const f=chip.dataset.filter;cards.forEach(card=>{const show=f==='all'||tagOf(card)===f;card.style.display=show?'':'none'; if(show){card.classList.remove('is-visible');requestAnimationFrame(()=>card.classList.add('is-visible'))}})}));
 })();
 (function(){document.querySelectorAll('.js-year').forEach(el=>el.textContent=new Date().getFullYear())})();
 (function(){

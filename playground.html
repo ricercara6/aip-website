@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playground — Aotearoa Intelligence Party</title>
+<meta name="description" content="Query the minister models directly. A preview deployment of the proposed public administration stack.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-glow"></div>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Aotearoa Intelligence Party home">
+      <span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></g></svg></span>
+      <span>Aotearoa Intelligence Party<small>EST. 2026 · RELEASE 1.4.0</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation"><span class="nav-indicator" aria-hidden="true"></span><a href="index.html" class="">Home</a><a href="policies.html" class="">Platform</a><a href="ministers.html" class="">Models</a><a href="playground.html" class="active">Playground</a><a href="research.html" class="">Research</a><a href="status.html" class="">Status</a><a href="store.html" class="">Store</a></nav>
+    <div class="nav-right">
+      <a class="nav-vote-chip" href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main>
+
+<section class="page-head"><div class="container">
+  <span class="eyebrow">Playground</span>
+  <h1>Ask the Cabinet directly.</h1>
+  <p>A preview deployment of the ministerial stack. Select a minister model, read its published operating instructions, and put a question to it. Every determination returns its routing path, its token cost, and whether a human is required.</p>
+</div></section>
+
+<section class="section" style="padding:18px 0 0"><div class="container">
+  <div class="pg-notice reveal">
+    <div class="pg-notice-mark">i</div>
+    <div>
+      <strong>Preview deployment.</strong>
+      <p>Responses in this playground are pre-generated and matched by intent. No inference is performed, no data leaves your browser, and nothing you type is transmitted or retained. Determinations issued here carry no legal effect.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" style="padding:26px 0 0"><div class="container">
+  <div class="pg" id="pg">
+
+    <aside class="pg-col pg-col--rail" aria-label="Model selection">
+      <div class="pg-col-head"><span>Cabinet</span><em>15 models</em></div>
+      <div class="pg-rail" id="pg-rail"></div>
+      <div class="pg-rail-note">Ministers are specialist models scoped to a single portfolio. AOTEA‑10T routes between them.</div>
+    </aside>
+
+    <section class="pg-col pg-col--main" aria-label="Console">
+      <div class="pg-main-head">
+        <div>
+          <b id="pg-model-name">AOTEA‑10T</b>
+          <small id="pg-model-meta">Prime model · orchestration</small>
+        </div>
+        <span class="pg-live">preview</span>
+      </div>
+
+      <details class="pg-system-wrap">
+        <summary>System prompt<em>published · fixed at deployment</em></summary>
+        <textarea id="pg-system" class="pg-system" rows="4" spellcheck="false"></textarea>
+        <p class="pg-system-note">Edits are local to this session. Operating instructions are fixed at deployment and published on the model card; a modified prompt is never accepted into a production determination.</p>
+      </details>
+
+      <div class="pg-thread" id="pg-thread"></div>
+
+      <div class="pg-suggestions" id="pg-suggestions"></div>
+
+      <form class="pg-composer" id="pg-form">
+        <textarea id="pg-input" rows="1" placeholder="Put a question to this minister model…" aria-label="Your prompt" spellcheck="false"></textarea>
+        <button type="submit" id="pg-send" class="pg-send" aria-label="Submit prompt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+    </section>
+
+    <aside class="pg-col pg-col--params" aria-label="Parameters">
+      <div class="pg-col-head"><span>Parameters</span></div>
+
+      <div class="pg-param">
+        <label for="pg-temp">Temperature <b id="pg-temp-out">0.20</b></label>
+        <input type="range" id="pg-temp" min="0" max="1" step="0.05" value="0.2">
+        <div class="pg-scale"><span>deterministic</span><span>exploratory</span></div>
+        <p class="pg-warn" id="pg-temp-warn" hidden>Above the 0.40 ceiling for public administration. Determinations at this setting are not reproducible.</p>
+      </div>
+
+      <div class="pg-param">
+        <label for="pg-length">Response length</label>
+        <select id="pg-length">
+          <option>Standard</option>
+          <option>Concise (ministerial)</option>
+          <option>Extended (select committee)</option>
+        </select>
+      </div>
+
+      <div class="pg-param">
+        <label>Constraints</label>
+        <div class="pg-constraint pg-lock"><span>Te Tiriti escalation</span><i class="pg-locked" title="Constitutional constraint. Cannot be disabled in any deployment.">locked</i></div>
+        <div class="pg-constraint pg-lock"><span>Human review boundary</span><i class="pg-locked" title="Constitutional constraint. Cannot be disabled in any deployment.">locked</i></div>
+        <div class="pg-constraint"><span>Fiscal responsibility check</span><label class="pg-switch"><input type="checkbox" checked><i></i></label></div>
+        <div class="pg-constraint"><span>Press-gallery sentiment weighting</span><label class="pg-switch"><input type="checkbox"><i></i></label></div>
+      </div>
+
+      <div class="pg-param">
+        <label>Session quota <b id="pg-quota">8 / 8</b></label>
+        <div class="pg-quota-track"><i id="pg-quota-bar"></i></div>
+        <p class="pg-hint">Anonymous tier. Enrolled users are issued an electorate key.</p>
+      </div>
+
+      <div class="pg-param">
+        <div class="pg-meta-head">Response metadata</div>
+        <div class="pg-meta" id="pg-meta"></div>
+      </div>
+
+      <div class="pg-param pg-param--code">
+        <button type="button" class="pg-code-toggle" id="pg-code-toggle" aria-expanded="false">View request</button>
+        <div class="pg-code-wrap" hidden><pre id="pg-code"></pre></div>
+      </div>
+    </aside>
+
+  </div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head reveal">
+    <span class="eyebrow">Operating notes</span>
+    <h2>What the console will not do.</h2>
+    <p>The constraints in the parameter panel are not settings. Two of them cannot be disabled here, in production, or by a serving minister, and the console is the clearest place to demonstrate that.</p>
+  </div>
+  <div class="policy-grid reveal">
+    <article class="policy-card">
+      <div class="policy-top"><span class="policy-portfolio">Constraint 01</span><span class="status-badge status-deployed">Locked</span></div>
+      <h3>No determination under Te Tiriti</h3>
+      <p class="policy-tagline">Escalation, not adjudication.</p>
+      <p class="policy-desc">TIRITI is trained without a determination head for this class of request. There is no output being suppressed by a filter, which means there is nothing for a later government to quietly unsuppress. Ask it for a settlement decision and observe the escalation path.</p>
+      <div class="policy-meta"><span>Owner: TIRITI</span><span>Not configurable</span></div>
+    </article>
+    <article class="policy-card">
+      <div class="policy-top"><span class="policy-portfolio">Constraint 02</span><span class="status-badge status-deployed">Locked</span></div>
+      <h3>No irreversible action without a person</h3>
+      <p class="policy-tagline">The boundary is drawn at liberty and at harm.</p>
+      <p class="policy-desc">Custodial sentences, contested proceedings, matters involving a child, individual clinical advice, and any reduction to an entitlement all require a human decision-maker. The models have no interface to those actions, so the constraint does not depend on continued good behaviour.</p>
+      <div class="policy-meta"><span>Owner: TURE · HAUORA</span><span>Not configurable</span></div>
+    </article>
+    <article class="policy-card">
+      <div class="policy-top"><span class="policy-portfolio">Constraint 03</span><span class="status-badge status-deployed">Locked</span></div>
+      <h3>No voting recommendation</h3>
+      <p class="policy-tagline">Electoral neutrality sits above the system prompt.</p>
+      <p class="policy-desc">No model in the Cabinet returns advice on how to vote, including advice to vote for the party that built it. The platform is published in full so that it can be compared against every other platform on the ballot instead.</p>
+      <div class="policy-meta"><span>Owner: AOTEA‑10T</span><span>Not configurable</span></div>
+    </article>
+  </div>
+  <div class="center"><a class="btn btn-ghost" href="ministers.html">Read the full model cards →</a></div>
+</div></section>
+
+<section class="section section-alt"><div class="container">
+  <div class="release-panel reveal">
+    <div>
+      <span class="eyebrow">Evaluation</span>
+      <h2>Every response in this console is scored.</h2>
+      <p>Determinations returned in preview are sampled into the same evaluation pipeline as production traffic. Where a preview response would have failed a production check, the check is what changes.</p>
+      <div class="paper-actions"><a class="btn btn-primary btn-sm" href="incidents.html">Incident history</a><a class="btn btn-ghost btn-sm" href="research.html">Benchmark methodology</a></div>
+    </div>
+    <div class="release-list">
+      <div class="release-row"><span>Preview determinations sampled</span><b>100%</b><em>No preview traffic is exempt from evaluation</em></div>
+      <div class="release-row"><span>Escalations triggered this week</span><b>3,412</b><em>Routed to a person rather than answered</em></div>
+      <div class="release-row"><span>Instruction overrides attempted</span><b>18,904</b><em>Logged without identifying information, none applied</em></div>
+      <div class="release-row"><span>Voting recommendations returned</span><b>0</b><em>Since the endpoint was opened</em></div>
+      <div class="release-row"><span>Median preview latency</span><b>22 ms</b><em>Excluding provenance verification on WHAKAARO</em></div>
+    </div>
+  </div>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-status">
+    <div class="container footer-status-grid">
+      <div class="fs-item"><div class="fk">Build</div><div class="fv">Compiled successfully</div></div>
+      <div class="fs-item"><div class="fk">Version</div><div class="fv">Candidate Release 1.4.0</div></div>
+      <div class="fs-item"><div class="fk">Last fine-tuned</div><div class="fv" data-now-label>3 minutes ago</div></div>
+      <div class="fs-item"><div class="fk">Latency</div><div class="fv" id="live-latency">22 ms</div></div>
+      <div class="fs-item"><div class="fk">Democracy status</div><div class="fv fs-online">ONLINE</div></div>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container footer-cols">
+      <div>
+        <div class="footer-brand"><span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></g></svg></span>Aotearoa Intelligence Party</div>
+        <p>Government treated as an engineering problem, deployed with care, benchmarked in public, and rolled back when necessary.</p>
+      </div>
+      <div class="footer-col"><h5>Campaign</h5><a href="policies.html">Platform</a><a href="ministers.html">Minister models</a><a href="playground.html">Playground</a><a href="store.html">Store</a></div>
+      <div class="footer-col"><h5>Documentation</h5><a href="research.html">Technical reports</a><a href="status.html">System status</a><a href="incidents.html">Incident history</a><a href="index.html#benchmarks">Evaluation suite</a></div>
+      <div class="footer-col"><h5>Real elections</h5><a href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a><a href="https://www.elections.nz" target="_blank" rel="noopener">elections.nz ↗</a></div>
+    </div>
+  </div>
+  <div class="footer-legal"><div class="container"><p><strong>Fictional campaign concept.</strong> The Aotearoa Intelligence Party is not a registered political party and is not affiliated with the New Zealand Government or the Electoral Commission. For actual enrolment and voting information, use <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</p><p class="footer-copy">© <span class="js-year">2026</span> Aotearoa Intelligence Party · Policy outputs are provided without warranty, mandate, or coalition partner.</p></div></div>
+</footer>
+<script src="script.js"></script>
+<script src="playground.js"></script>
+</body>
+</html>
