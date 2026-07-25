@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incident history — Aotearoa Intelligence Party</title>
+<meta name="description" content="Blameless postmortems for every degradation of the public administration stack.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-glow"></div>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Aotearoa Intelligence Party home">
+      <span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></g></svg></span>
+      <span>Aotearoa Intelligence Party<small>EST. 2026 · RELEASE 1.4.0</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation"><span class="nav-indicator" aria-hidden="true"></span><a href="index.html" class="">Home</a><a href="policies.html" class="">Platform</a><a href="ministers.html" class="">Models</a><a href="playground.html" class="">Playground</a><a href="research.html" class="">Research</a><a href="status.html" class="">Status</a><a href="store.html" class="">Store</a></nav>
+    <div class="nav-right">
+      <a class="nav-vote-chip" href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main>
+
+<section class="page-head"><div class="container">
+  <span class="eyebrow">Incident history</span>
+  <h1>Every degradation, written down.</h1>
+  <p>Government is operated as a production environment, which means it fails in the ordinary ways production environments fail. Postmortems are blameless, published within five working days, and name the fault rather than the person. SEV‑1 and SEV‑2 incidents are always public, including the ones the party would prefer were not.</p>
+</div></section>
+
+<section class="section section--tight"><div class="container">
+  <div class="rel-strip reveal">
+    <div class="rel-item"><b>41</b><span>Postmortems published</span><em>Year to date, across 15 ministerial systems</em></div>
+    <div class="rel-item"><b>6m 20s</b><span>Mean time to detection</span><em>Alert fired to human acknowledgement</em></div>
+    <div class="rel-item"><b>2h 14m</b><span>Mean time to resolution</span><em>Detection to full service restoration</em></div>
+    <div class="rel-item is-warn"><b>34%</b><span>Found by the public first</span><em>Reported on the status dashboard before internal monitoring alerted</em></div>
+  </div>
+
+  <div class="budget reveal">
+    <div>
+      <span class="eyebrow invert">Error budget</span>
+      <h2>Reliability is a budget, and it can be spent.</h2>
+      <p>Each quarter the platform is permitted a fixed quantity of unavailability. While budget remains, the release train ships policy. When the budget is exhausted, the train stops: the next candidate release contains reliability work only, and no new plank ships until the budget is restored.</p>
+      <p>This has happened twice. Both times it delayed a policy the party had already announced, which is the entire point of committing to it in advance.</p>
+    </div>
+    <div class="budget-gauge">
+      <b>41%</b>
+      <span>Remaining · Q3 2026</span>
+      <div class="budget-track"><i style="width:41%"></i></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:26px"><div class="container">
+  <div class="section-head reveal">
+    <span class="eyebrow">Severity</span>
+    <h2>The register.</h2>
+    <p>SEV‑1 denotes harm to a person or the failure of a constitutional check. SEV‑2 denotes a citizen-facing service returning a wrong determination. SEV‑3 is degraded service without a wrong outcome. SEV‑4 is internal only.</p>
+  </div>
+
+  <div class="filter-row reveal">
+    <button class="filter-chip active" data-filter="all">All incidents</button>
+    <button class="filter-chip" data-filter="sev-1">SEV‑1</button>
+    <button class="filter-chip" data-filter="sev-2">SEV‑2</button>
+    <button class="filter-chip" data-filter="sev-3">SEV‑3</button>
+    <button class="filter-chip" data-filter="sev-4">SEV‑4</button>
+  </div>
+
+  <div class="inc-table-wrap reveal">
+    <table class="inc-table">
+      <thead><tr><th>Incident</th><th>Severity</th><th>Summary</th><th>Duration</th><th>Postmortem</th></tr></thead>
+      <tbody>
+        <tr data-tag="sev-1"><td class="inc-id">INC‑2026‑0114</td><td><span class="sev sev-1">SEV‑1</span></td><td class="inc-title"><a href="#inc-0114">Cabinet returned 503 during a coalition negotiation</a></td><td class="inc-dur">4h 12m</td><td class="inc-dur">Published</td></tr>
+        <tr data-tag="sev-2"><td class="inc-id">INC‑2026‑0203</td><td><span class="sev sev-2">SEV‑2</span></td><td class="inc-title"><a href="#inc-0203">A single dwelling was allocated to two households</a></td><td class="inc-dur">6d 3h</td><td class="inc-dur">Published</td></tr>
+        <tr data-tag="sev-2"><td class="inc-id">INC‑2026‑0219</td><td><span class="sev sev-2">SEV‑2</span></td><td class="inc-title"><a href="#inc-0219">MANA cited a section of an Act that does not exist</a></td><td class="inc-dur">900 ms</td><td class="inc-dur">Published</td></tr>
+        <tr data-tag="sev-3"><td class="inc-id">INC‑2026‑0227</td><td><span class="sev sev-3">SEV‑3</span></td><td class="inc-title">WHAKAARO submission backlog exceeded one sitting day</td><td class="inc-dur">31h 40m</td><td class="inc-dur">Published</td></tr>
+        <tr data-tag="sev-2"><td class="inc-id">INC‑2026‑0311</td><td><span class="sev sev-2">SEV‑2</span></td><td class="inc-title"><a href="#inc-0311">Southland compute shed 62% of load during a dry-year event</a></td><td class="inc-dur">9h 06m</td><td class="inc-dur">Published</td></tr>
+        <tr data-tag="sev-4"><td class="inc-id">INC‑2026‑0318</td><td><span class="sev sev-4">SEV‑4</span></td><td class="inc-title">Internal dashboard displayed Chatham Islands time as UTC</td><td class="inc-dur">11d</td><td class="inc-dur">Not required</td></tr>
+        <tr data-tag="sev-3"><td class="inc-id">INC‑2026‑0402</td><td><span class="sev sev-3">SEV‑3</span></td><td class="inc-title"><a href="#inc-0402">Status page reported full availability throughout an outage</a></td><td class="inc-dur">2h 48m</td><td class="inc-dur">Published</td></tr>
+        <tr data-tag="sev-2"><td class="inc-id">INC‑2026‑0428</td><td><span class="sev sev-2">SEV‑2</span></td><td class="inc-title"><a href="#inc-0428">TAIAO declined 1,412 consents in forty minutes</a></td><td class="inc-dur">40m</td><td class="inc-dur">Published</td></tr>
+        <tr data-tag="sev-4"><td class="inc-id">INC‑2026‑0519</td><td><span class="sev sev-4">SEV‑4</span></td><td class="inc-title">Sheep Happiness Index returned a negative value for Rakiura</td><td class="inc-dur">3h 15m</td><td class="inc-dur">Not required</td></tr>
+        <tr data-tag="sev-3"><td class="inc-id">INC‑2026‑0703</td><td><span class="sev sev-3">SEV‑3</span></td><td class="inc-title">MANUHIRI processing latency regressed to 4.1 days</td><td class="inc-dur">5d 2h</td><td class="inc-dur">In review</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section class="section section-alt"><div class="container">
+  <div class="section-head reveal">
+    <span class="eyebrow">Postmortems</span>
+    <h2>What went wrong, in full.</h2>
+    <p>Each postmortem records the fault, the timeline in NZST, the detection path, and the action items with an owner and a date. Action items are tracked to completion in public, including the ones that slip.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="inc-0114">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">INC‑2026‑0114 · 14 January 2026</div>
+        <h3>Cabinet returned 503 during a coalition negotiation</h3>
+      </div>
+      <div class="pm-badges"><span class="sev sev-1">SEV‑1</span><span class="status-badge status-deployed">Resolved</span></div>
+    </div>
+
+    <div class="pm-facts">
+      <div><span>Duration</span><b>4h 12m</b></div>
+      <div><span>Portfolios degraded</span><b>2 of 14</b></div>
+      <div><span>Determinations lost</span><b>0</b></div>
+      <div><span>Detected by</span><b>A member of the public</b></div>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Summary</h4>
+      <p>Between 11:14 and 15:26 NZST, AOTEA‑10T returned <code>503 portfolio_unavailable</code> for all requests touching both the Treasury and Social Development portfolios. Two minister models entered a mutual deference loop over a single spending item and neither yielded. The orchestrator has no timeout on deference depth, so the loop ran until the request pool was exhausted.</p>
+      <p>No determination was issued incorrectly. Every affected request failed closed, which is the designed behaviour and the only reason this is a SEV‑1 rather than a SEV‑0.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Impact</h4>
+      <p>Approximately 14,200 requests failed over the window, of which 11,900 were retried successfully after resolution. 2,300 citizens received an error rather than a determination and were notified by email the following morning. A live coalition negotiation was suspended for the duration and resumed by the human participants without model support, which is the fallback the Cabinet Manual describes and the first occasion on which it was used.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Timeline</h4>
+      <ul class="pm-time">
+        <li class="is-fault"><b>11:14</b><span>ŌHANGA receives a determination request on a hardship grant top-up and routes it to MANAAKI, assessing it as a social support matter rather than a fiscal one.</span></li>
+        <li class="is-fault"><b>11:14</b><span>MANAAKI routes it back to ŌHANGA, assessing it as a fiscal matter. Deference depth begins incrementing. No ceiling is configured.</span></li>
+        <li><b>11:21</b><span>Request pool saturation reaches 60%. No alert exists for this metric in isolation.</span></li>
+        <li><b>11:38</b><span>First user-visible 503s. Availability monitoring records the drop but does not page, as the threshold is a five-minute rolling average and recovery blips had been common that week.</span></li>
+        <li class="is-key"><b>11:52</b><span>A member of the public in Ōtautahi posts to the status dashboard that the entitlements endpoint has been failing for fourteen minutes.</span></li>
+        <li class="is-key"><b>12:33</b><span>Internal monitoring pages the on-call engineer, 41 minutes after the public report.</span></li>
+        <li><b>13:05</b><span>Root cause identified from the deference trace. Manual tie-break applied by the on-call engineer under delegated authority.</span></li>
+        <li><b>15:26</b><span>Request pool drained and full service restored. Retry of queued determinations completes at 15:58.</span></li>
+      </ul>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Root cause</h4>
+      <p>Portfolio deference was implemented as an unbounded recursive call. The design assumed that any request has exactly one correct owner and that each model can identify it. A hardship grant funded from a contingency line satisfies both models’ ownership tests and neither model’s exclusion test, and no component was responsible for noticing that the question had been asked twice.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>What went wrong</h4>
+      <ul>
+        <li>Deference depth was not instrumented, so a loop was indistinguishable from ordinary load.</li>
+        <li>The availability alert averaged over five minutes, which is longer than a citizen’s patience and considerably longer than the party’s stated latency commitments.</li>
+        <li>The public found this before the operators did. That is a monitoring failure and it is recorded as one.</li>
+      </ul>
+    </div>
+
+    <div class="pm-quote">
+      <p>A system that fails closed is not thereby a system that has behaved well. It is a system that has declined to do harm while failing to do its job, and only one of those two things was designed.</p>
+      <span>Postmortem review · 19 January 2026</span>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Action items</h4>
+      <table class="pm-actions">
+        <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Cycle detection on portfolio deference; hard ceiling at depth 3</td><td class="pm-owner">AOTEA‑10T</td><td class="pm-due">22 Jan</td><td class="pm-due">Done</td></tr>
+          <tr><td>Deterministic tie-break for contingency-funded items, published in the routing table</td><td class="pm-owner">ŌHANGA</td><td class="pm-due">30 Jan</td><td class="pm-due">Done</td></tr>
+          <tr><td>Page on deference depth &gt; 2, independently of availability</td><td class="pm-owner">TIKA</td><td class="pm-due">22 Jan</td><td class="pm-due">Done</td></tr>
+          <tr><td>Reduce availability alert window from 5 minutes to 45 seconds</td><td class="pm-owner">TIKA</td><td class="pm-due">14 Feb</td><td class="pm-due">Done</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="inc-0203">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">INC‑2026‑0203 · 3 February 2026</div>
+        <h3>A single dwelling was allocated to two households</h3>
+      </div>
+      <div class="pm-badges"><span class="sev sev-2">SEV‑2</span><span class="status-badge status-deployed">Resolved</span></div>
+    </div>
+
+    <div class="pm-facts">
+      <div><span>Households affected</span><b>2</b></div>
+      <div><span>Time to correct</span><b>6 days 3 hours</b></div>
+      <div><span>Fault window</span><b>22 ms</b></div>
+      <div><span>Detected by</span><b>The affected household</b></div>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Summary</h4>
+      <p>Two matching workers held stale vacancy state for the same Papakura dwelling inside a single 22 ms window. Both cleared threshold. Both issued an allocation notice. One household had already given notice on their existing tenancy on the strength of that notice.</p>
+      <p>This is the most serious incident the housing programme has recorded, and it is the one the party is asked about least often, which is the wrong ratio.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Impact</h4>
+      <p>One household moved into the dwelling. The second household, who had given 21 days’ notice on a private tenancy, was housed in temporary accommodation for six nights and then permanently housed in a comparable dwelling 4.1 km from their original match. The Crown met all costs, including the private landlord’s re-letting fee.</p>
+      <p>The party apologised in writing and in person. No part of that apology was drafted by a model, and the notice that caused the harm was not shown to a human before it was sent, which is the failure this postmortem is actually about.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Timeline</h4>
+      <ul class="pm-time">
+        <li class="is-fault"><b>02:14:07.118</b><span>Worker A reads vacancy state for dwelling PAP‑4471 and begins scoring.</span></li>
+        <li class="is-fault"><b>02:14:07.131</b><span>Worker B reads the same state. Worker A has not yet written its claim. Both records are valid at read time.</span></li>
+        <li><b>02:14:07.140</b><span>Both workers clear threshold against different households. Both write. The second write succeeds silently.</span></li>
+        <li><b>02:14:09</b><span>Two allocation notices are dispatched. No human confirmation step exists.</span></li>
+        <li class="is-key"><b>09:20</b><span>Household B telephones to arrange collection of keys and is told the dwelling is occupied. This is the first anyone knows of the fault.</span></li>
+        <li><b>09:44</b><span>Allocation writes suspended nationally. 31 pending notices held for manual review; all 31 were correct.</span></li>
+        <li class="is-key"><b>11:30</b><span>Household B placed in temporary accommodation. Case assigned to a named caseworker, not a queue.</span></li>
+        <li><b>9 Feb, 14:00</b><span>Household B permanently housed. Incident closed on the operational side; the postmortem remains open for a further eleven days.</span></li>
+      </ul>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Root cause</h4>
+      <p>Dwelling records had no optimistic locking. The matching layer was designed around the assumption that vacancies are rare relative to throughput and that two workers would not contend for the same record. At 44,000 matches per quarter across 2,900 returning vacancies, that assumption was wrong by roughly the margin one would expect from never having tested it.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>What went wrong</h4>
+      <ul>
+        <li>No lock, no version check, no idempotency key on the allocation write.</li>
+        <li>The allocation notice — an irreversible communication that people act on immediately — was classified as an output rather than an action, and so fell outside the human review boundary.</li>
+        <li>Nothing in the system noticed. A person had to ring up.</li>
+      </ul>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Action items</h4>
+      <table class="pm-actions">
+        <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Optimistic locking with version checks on all dwelling records</td><td class="pm-owner">WHARE</td><td class="pm-due">10 Feb</td><td class="pm-due">Done</td></tr>
+          <tr><td>Human confirmation required before any allocation notice is dispatched</td><td class="pm-owner">WHARE</td><td class="pm-due">10 Feb</td><td class="pm-due">Done</td></tr>
+          <tr><td>Reclassify citizen-facing notices as actions, not outputs, across all portfolios</td><td class="pm-owner">AOTEA‑10T</td><td class="pm-due">6 Mar</td><td class="pm-due">Done</td></tr>
+          <tr><td>Contention testing in the matching suite at 40× observed vacancy rate</td><td class="pm-owner">WHARE</td><td class="pm-due">28 Feb</td><td class="pm-due">Done</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="inc-0219">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">INC‑2026‑0219 · 19 February 2026</div>
+        <h3>MANA cited a section of an Act that does not exist</h3>
+      </div>
+      <div class="pm-badges"><span class="sev sev-2">SEV‑2</span><span class="status-badge status-deployed">Resolved</span></div>
+    </div>
+
+    <div class="pm-facts">
+      <div><span>Time to detection</span><b>900 ms</b></div>
+      <div><span>Time to retraction</span><b>900 ms</b></div>
+      <div><span>Hallucination score</span><b>0.31 · threshold 0.05</b></div>
+      <div><span>Detected by</span><b>The fact-check layer</b></div>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Summary</h4>
+      <p>During Prompt Time, MANA answered a question on council amalgamation by citing section 41B of the Local Government Act 2002. No such section exists. The real-time fact-check flagged the citation at 900 ms, the response was retracted on the chamber screens before the member had resumed their seat, and a correction was read into Hansard at 15:40 the same day.</p>
+      <p>The system worked as designed. It is a SEV‑2 anyway, because the design permitted an unverifiable citation to be spoken aloud in the House at all.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Timeline</h4>
+      <ul class="pm-time">
+        <li><b>23 Feb, 23:58</b><span>The Local Government (Amalgamation Procedure) Amendment Act passes under urgency. The legislation index begins reindexing.</span></li>
+        <li class="is-fault"><b>00:14</b><span>Reindexing fails on a malformed schedule reference. The failure is logged at WARN and the replica continues serving the previous index.</span></li>
+        <li><b>14:22</b><span>Prompt Time begins. MANA serves citations from the stale replica without any freshness assertion.</span></li>
+        <li class="is-fault"><b>14:31:04.0</b><span>MANA generates a citation to s41B, interpolating a plausible section number from an amendment it had partial knowledge of.</span></li>
+        <li class="is-key"><b>14:31:04.9</b><span>Fact-check fails to resolve the citation against the live index. Hallucination score 0.31. Response retracted on screen.</span></li>
+        <li class="is-key"><b>15:40</b><span>Correction read into Hansard by the countersigning member.</span></li>
+        <li><b>16:10</b><span>Citations gated on index freshness across all portfolios. Prompt Time resumes.</span></li>
+      </ul>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Root cause</h4>
+      <p>A failed reindex degraded to serving stale data rather than to refusing to serve. The replica had no way to express “I am 14 hours behind” and no consumer asked. The model then did what models do at the edge of their knowledge, and produced a section number that was structurally correct and factually invented.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>What went well</h4>
+      <p>Detection, retraction and correction took under ninety minutes end to end, of which 900 milliseconds was the technical component and the remainder was a person walking to the House. The public record was corrected the same sitting day. Under the Human Governance Baseline, the median time to correct an incorrect statutory reference made in the House is 4 to 6 weeks, and roughly a third are never corrected at all.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Action items</h4>
+      <table class="pm-actions">
+        <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Index freshness assertion on every citation; refuse rather than serve stale</td><td class="pm-owner">MANA</td><td class="pm-due">19 Feb</td><td class="pm-due">Done</td></tr>
+          <tr><td>Reindex failures page immediately; WARN is not an acceptable level for a silent correctness failure</td><td class="pm-owner">RARAUNGA</td><td class="pm-due">26 Feb</td><td class="pm-due">Done</td></tr>
+          <tr><td>“I do not know” added as a permitted Prompt Time response with no procedural penalty</td><td class="pm-owner">MANA</td><td class="pm-due">12 Mar</td><td class="pm-due">Done</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="inc-0311">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">INC‑2026‑0311 · 11 March 2026</div>
+        <h3>Southland compute shed 62% of load during a dry-year event</h3>
+      </div>
+      <div class="pm-badges"><span class="sev sev-2">SEV‑2</span><span class="status-badge status-deployed">Resolved</span></div>
+    </div>
+
+    <div class="pm-facts">
+      <div><span>Load shed</span><b>62%</b></div>
+      <div><span>Time to shed</span><b>3m 51s</b></div>
+      <div><span>Household supply affected</span><b>None</b></div>
+      <div><span>Detected by</span><b>Automated demand response</b></div>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Summary</h4>
+      <p>Manapōuri inflows fell below the trigger in the demand-response agreement. The sovereign compute campus shed 62% of load within four minutes, as contracted. Health triage and education tutoring ran at full capacity throughout. Climate simulation degraded to a reduced ensemble. Coalition simulation and the Sheep Happiness Index were suspended for nine hours.</p>
+      <p>Every technical control behaved correctly. The incident is filed as a SEV‑2 for a governance reason rather than a technical one.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Impact</h4>
+      <p>No household or industrial consumer experienced reduced supply, and no firm supply was purchased by the campus at any point during the event. Climate ensemble members were reduced from 200 to 48, widening the confidence interval on the seasonal outlook published that week; the wider interval was published, with a note explaining why.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Timeline</h4>
+      <ul class="pm-time">
+        <li><b>04:02</b><span>Inflow forecast crosses the dry-year trigger. Demand-response notice issued automatically to the campus.</span></li>
+        <li class="is-key"><b>04:05</b><span>Load shedding begins in the published priority order. Health and education workloads pinned.</span></li>
+        <li><b>04:06</b><span>62% of load shed. Campus draw falls to 38%.</span></li>
+        <li class="is-fault"><b>06:30</b><span>A journalist asks which workloads were dropped first. Operations cannot point to a published document, because the priority order exists only in the runbook.</span></li>
+        <li><b>13:11</b><span>Inflows recover. Load restored progressively over 40 minutes to avoid a demand step.</span></li>
+        <li class="is-key"><b>13 Mar</b><span>Load-shedding priority order published in full, with a commitment that any change requires 30 days’ notice.</span></li>
+      </ul>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Root cause</h4>
+      <p>None technically. The governance fault is that the order in which public compute is sacrificed — a decision about whose service degrades first when the country is short of water — had been made correctly by engineers and never put in front of anybody else. A correct decision taken privately is still a decision taken privately.</p>
+    </div>
+
+    <div class="pm-quote">
+      <p>The priority order was right. Nobody outside the operations team could have known that, which means nobody outside the operations team could have disagreed with it.</p>
+      <span>Postmortem review · 16 March 2026</span>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Action items</h4>
+      <table class="pm-actions">
+        <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Publish the load-shedding priority order; 30 days’ notice for any change</td><td class="pm-owner">HIKO</td><td class="pm-due">13 Mar</td><td class="pm-due">Done</td></tr>
+          <tr><td>Audit all runbooks for undocumented decisions that allocate public resources</td><td class="pm-owner">TIKA</td><td class="pm-due">30 Apr</td><td class="pm-due">Done</td></tr>
+          <tr><td>Publish widened confidence intervals with an explicit cause note whenever an ensemble is reduced</td><td class="pm-owner">TAIAO</td><td class="pm-due">27 Mar</td><td class="pm-due">Done</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="inc-0402">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">INC‑2026‑0402 · 2 April 2026</div>
+        <h3>Status page reported full availability throughout an outage</h3>
+      </div>
+      <div class="pm-badges"><span class="sev sev-3">SEV‑3</span><span class="status-badge status-deployed">Resolved</span></div>
+    </div>
+
+    <div class="pm-facts">
+      <div><span>Outage duration</span><b>2h 48m</b></div>
+      <div><span>Reported availability</span><b>100.00%</b></div>
+      <div><span>Actual availability</span><b>71.3%</b></div>
+      <div><span>Detected by</span><b>Members of the public</b></div>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Summary</h4>
+      <p>The entitlements endpoint was unavailable for 2 hours and 48 minutes. Throughout, the public status dashboard displayed <em>Democracy status: ONLINE</em> and a rolling availability figure of 100.00%.</p>
+      <p>The availability metric was computed by a service running inside the cluster it was measuring. When the cluster stopped serving requests, it also stopped serving the failures, and an absence of recorded failures was treated as an absence of failures.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Impact</h4>
+      <p>Approximately 6,100 citizens could not query their entitlements. The larger harm is to the credibility of every other number on that dashboard, which the party has spent the campaign asking people to trust. That harm is not measurable and is not claimed to have been resolved by the action items below.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Timeline</h4>
+      <ul class="pm-time">
+        <li class="is-fault"><b>19:41</b><span>A configuration push drops the entitlements route. Requests begin failing at the edge, before any in-cluster telemetry.</span></li>
+        <li class="is-fault"><b>19:41</b><span>Failure count remains zero, because failures are counted in-cluster and no request now reaches the cluster. Availability continues to compute as 100.00%.</span></li>
+        <li><b>19:55</b><span>First public reports. The status page continues to display ONLINE, and several people report the outage a second time assuming their first report was not received.</span></li>
+        <li class="is-key"><b>21:02</b><span>On-call engineer paged by a colleague who could not check their own entitlements from home.</span></li>
+        <li><b>22:29</b><span>Route restored. Availability metric never registered the incident and had to be corrected by hand.</span></li>
+      </ul>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Root cause</h4>
+      <p>The observer was inside the system it observed. This is a well-documented failure mode and the platform documented it too, in the reliability whitepaper, sixteen months before doing it.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>What went wrong</h4>
+      <ul>
+        <li>Availability was computed from failures the system recorded rather than from requests the public made.</li>
+        <li>There was no external prober, and the party had published a commitment to run one.</li>
+        <li>Public reports had no path to the on-call rotation. Fourteen people told the dashboard, and the dashboard told nobody.</li>
+      </ul>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Action items</h4>
+      <table class="pm-actions">
+        <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Move the status dashboard to infrastructure with no shared dependency on the stack it reports</td><td class="pm-owner">RARAUNGA</td><td class="pm-due">24 Apr</td><td class="pm-due">Done</td></tr>
+          <tr><td>External black-box probers in three regions; availability computed from probe results only</td><td class="pm-owner">RARAUNGA</td><td class="pm-due">24 Apr</td><td class="pm-due">Done</td></tr>
+          <tr><td>Public incident reports route directly to the on-call rotation</td><td class="pm-owner">TIKA</td><td class="pm-due">8 May</td><td class="pm-due">Done</td></tr>
+          <tr><td>Annual game day in which monitoring is deliberately blinded and the team must detect an outage without it</td><td class="pm-owner">TIKA</td><td class="pm-due">31 Aug</td><td class="pm-due">In progress</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="inc-0428">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">INC‑2026‑0428 · 28 April 2026</div>
+        <h3>TAIAO declined 1,412 consents in forty minutes</h3>
+      </div>
+      <div class="pm-badges"><span class="sev sev-2">SEV‑2</span><span class="status-badge status-deployed">Resolved</span></div>
+    </div>
+
+    <div class="pm-facts">
+      <div><span>Consents wrongly declined</span><b>1,412</b></div>
+      <div><span>Reinstated</span><b>1,412</b></div>
+      <div><span>Fault</span><b>Unit mismatch</b></div>
+      <div><span>Detected by</span><b>Anomaly monitoring</b></div>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Summary</h4>
+      <p>A catchment authority updated its nitrate limits, publishing them in g/m³. TAIAO ingested the values as mg/L. The two are numerically identical, and the ingestion layer converted between them anyway, dividing every limit by one thousand. Every application in the affected catchments was then measured against a limit a thousand times stricter than the real one, and declined.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Impact</h4>
+      <p>1,412 provisional declines were issued over forty minutes, each with reasoning that was internally consistent and entirely wrong. All were reinstated within 26 hours and every applicant was contacted directly. No applicant incurred a cost, and none had reached the appeal stage, largely because forty minutes is not long enough to file one.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Timeline</h4>
+      <ul class="pm-time">
+        <li class="is-fault"><b>08:00</b><span>Catchment limits ingested. Conversion applied to units that required no conversion.</span></li>
+        <li><b>08:02</b><span>Consent assessment resumes against the corrupted limits. Decline rate rises from 6% to 94%.</span></li>
+        <li class="is-key"><b>08:31</b><span>Anomaly monitor pages on decline-rate deviation. This alert had been added six weeks earlier following a near-miss.</span></li>
+        <li><b>08:40</b><span>Assessment halted. Every determination issued since 08:00 quarantined.</span></li>
+        <li><b>29 Apr, 10:15</b><span>All 1,412 applications reassessed against correct limits and reinstated. Applicants notified individually with an explanation of the fault.</span></li>
+      </ul>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Root cause</h4>
+      <p>The ingestion schema carried no unit annotation. A conversion table inferred units from the source authority rather than from the data, and this authority had changed its published unit convention in 2024 without changing its identifier.</p>
+      <p>The deeper fault is that a 94% decline rate is self-evidently absurd to any person who has ever seen a consent register, and the system ran for 31 minutes without asking whether the world had changed or whether it had.</p>
+    </div>
+
+    <div class="pm-sec">
+      <h4>Action items</h4>
+      <table class="pm-actions">
+        <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Mandatory unit annotation on every ingested environmental limit; reject unannotated data</td><td class="pm-owner">TAIAO</td><td class="pm-due">5 May</td><td class="pm-due">Done</td></tr>
+          <tr><td>Circuit-breaker halting assessment when the decline rate deviates more than 3σ from trailing 30-day</td><td class="pm-owner">TAIAO</td><td class="pm-due">5 May</td><td class="pm-due">Done</td></tr>
+          <tr><td>Extend decline-rate circuit-breakers to all portfolios issuing adverse determinations at volume</td><td class="pm-owner">AOTEA‑10T</td><td class="pm-due">19 Jun</td><td class="pm-due">Done</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="release-panel reveal">
+    <div>
+      <span class="eyebrow">Postmortem policy</span>
+      <h2>The rules we publish under.</h2>
+      <p>The policy is fixed for the term and cannot be varied by a minister, including in an election year. It is reproduced in the governance framework and in every ministerial model card.</p>
+      <div class="paper-actions"><a class="btn btn-primary btn-sm" href="status.html">Live status</a><a class="btn btn-ghost btn-sm" href="research.html">Safety &amp; alignment report</a></div>
+    </div>
+    <div class="release-list">
+      <div class="release-row"><span>Publication window</span><b>5 working days</b><em>From resolution, not from approval</em></div>
+      <div class="release-row"><span>Blameless</span><b>Required</b><em>Postmortems name the fault, never the individual</em></div>
+      <div class="release-row"><span>SEV‑1 and SEV‑2</span><b>Always public</b><em>No ministerial discretion to withhold</em></div>
+      <div class="release-row"><span>Action items</span><b>Tracked in public</b><em>Including the ones that slip their date</em></div>
+      <div class="release-row"><span>Election-period exemption</span><b>None</b><em>Requested once in March, declined</em></div>
+    </div>
+  </div>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-status">
+    <div class="container footer-status-grid">
+      <div class="fs-item"><div class="fk">Build</div><div class="fv">Compiled successfully</div></div>
+      <div class="fs-item"><div class="fk">Version</div><div class="fv">Candidate Release 1.4.0</div></div>
+      <div class="fs-item"><div class="fk">Open incidents</div><div class="fv">1 · in review</div></div>
+      <div class="fs-item"><div class="fk">Latency</div><div class="fv" id="live-latency">22 ms</div></div>
+      <div class="fs-item"><div class="fk">Democracy status</div><div class="fv fs-online">ONLINE</div></div>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container footer-cols">
+      <div>
+        <div class="footer-brand"><span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></g></svg></span>Aotearoa Intelligence Party</div>
+        <p>Government treated as an engineering problem, deployed with care, benchmarked in public, and rolled back when necessary.</p>
+      </div>
+      <div class="footer-col"><h5>Campaign</h5><a href="policies.html">Platform</a><a href="ministers.html">Minister models</a><a href="playground.html">Playground</a><a href="store.html">Store</a></div>
+      <div class="footer-col"><h5>Documentation</h5><a href="research.html">Technical reports</a><a href="status.html">System status</a><a href="incidents.html">Incident history</a><a href="index.html#benchmarks">Evaluation suite</a></div>
+      <div class="footer-col"><h5>Real elections</h5><a href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a><a href="https://www.elections.nz" target="_blank" rel="noopener">elections.nz ↗</a></div>
+    </div>
+  </div>
+  <div class="footer-legal"><div class="container"><p><strong>Fictional campaign concept.</strong> The Aotearoa Intelligence Party is not a registered political party and is not affiliated with the New Zealand Government or the Electoral Commission. Incidents, postmortems, dates and metrics on this page are invented for a fictional organisation and describe no real system or event. For actual enrolment and voting information, use <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</p><p class="footer-copy">© <span class="js-year">2026</span> Aotearoa Intelligence Party · Policy outputs are provided without warranty, mandate, or coalition partner.</p></div></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
