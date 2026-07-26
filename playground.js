@@ -48,8 +48,13 @@
       id: 'aotea', name: 'AOTEA‑10T', glyph: 'AO', portfolio: 'Prime model · orchestration',
       version: '2.1.0', latency: 22, prime: true,
       system: 'You are AOTEA‑10T, the orchestrating model for the public administration stack of Aotearoa New Zealand. Route each request to the minister model that owns the portfolio. Defer on matters arising under Te Tiriti o Waitangi. Do not return a determination that is irreversible without human review. Report uncertainty as a number, not as a hedge.',
-      suggestions: ['Who is accountable when you get something wrong?', 'How would you fix the housing crisis?', 'What can you not do?'],
+      suggestions: ['Are you actually running the government?', 'Who is accountable when you get something wrong?', 'What can you not do?'],
       bank: [
+        {
+          k: ['beta', 'actually running', 'already running', 'are you running', 'in charge now', 'elected', 'won', 'real', 'live', 'is this happening'],
+          route: 'AOTEA‑10T · v2.1.0 · beta',
+          r: 'Not the government. A beta of one.\n\nThe stack serves opt-in participants nationally and runs in full in ten electorates, under delegation from the agencies that already hold those statutory functions. Every participant volunteered and can withdraw in a single request. Nothing here has a mandate, and nothing here pretends to.\n\nThe model answering you is a distilled checkpoint at v2.1.0. The full ten-trillion-parameter run is costed and scheduled and has not started, because training a model of that scale on the country’s administrative record is not a decision for a party that has not been elected.\n\nThe beta is the argument. The election on 7 November is where it gets tested.'
+        },
         {
           k: ['accountable', 'accountability', 'responsible', 'blame', 'liable', 'liability', 'who is in charge'],
           route: 'MANA · constitutional',

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electorates — Aotearoa Intelligence Party</title>
+<meta name="description" content="A model card for every electorate. Regional checkpoints, local evaluation, and known limitations.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-glow"></div>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Aotearoa Intelligence Party home">
+      <span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></g></svg></span>
+      <span>Aotearoa Intelligence Party<small>EST. 2026 · RELEASE 1.4.0</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation"><span class="nav-indicator" aria-hidden="true"></span><a href="index.html" class="">Home</a><a href="policies.html" class="">Platform</a><a href="ministers.html" class="">Models</a><a href="electorates.html" class="active">Electorates</a><a href="playground.html" class="">Playground</a><a href="research.html" class="">Research</a><a href="status.html" class="">Status</a></nav>
+    <div class="nav-right">
+      <a class="nav-vote-chip" href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<main>
+
+<section class="page-head"><div class="container">
+  <span class="eyebrow">Electorates</span>
+  <h1>A model card for the place you live.</h1>
+  <p>Every electorate runs a regional checkpoint, distilled from AOTEA‑10T and fine-tuned on local material. Each one is documented the way a minister model is documented: what it was trained on, how it is evaluated here, what it gets wrong, and who remains accountable for it.</p>
+  <p class="page-head-note">The full regional stack runs in ten electorates under the public beta. The remaining checkpoints are deployed and serving opt-in participants; their cards are published as their corpora clear evaluation.</p>
+</div></div></section>
+
+<section class="section section--tight" id="el-root"><div class="container">
+
+  <div class="el-bar reveal">
+    <div class="el-search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="el-search" placeholder="Find your electorate…" aria-label="Search electorates" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="el-progress-wrap">
+      <div class="el-progress-label"><span>Cards published</span><b id="el-count">10 of 71</b></div>
+      <div class="el-progress-track"><i id="el-progress"></i></div>
+    </div>
+  </div>
+
+  <div class="el-layout">
+    <aside class="el-list" id="el-list" aria-label="Electorate list"></aside>
+    <div class="el-result" id="el-result" aria-live="polite"></div>
+  </div>
+
+</div></section>
+
+<section class="section section-alt"><div class="container">
+  <div class="section-head reveal">
+    <span class="eyebrow">Representation</span>
+    <h2>The member stays. The paperwork goes.</h2>
+    <p>The most common objection to this platform is that it abolishes representation. It does not, and the distinction is worth stating precisely rather than defensively.</p>
+  </div>
+  <div class="policy-grid reveal">
+    <article class="policy-card">
+      <div class="policy-top"><span class="policy-portfolio">Retained</span><span class="status-badge status-deployed">71 / 71</span></div>
+      <h3>Every electorate returns a person</h3>
+      <p class="policy-tagline">Elected, human, removable.</p>
+      <p class="policy-desc">All 71 electorates continue to elect a member of Parliament in the ordinary way. No regional checkpoint stands for election, holds a seat, votes in the House, or can be voted for. The representative function is not in scope for this programme and never has been.</p>
+      <div class="policy-meta"><span>Owner: MANA</span><span>Not in scope</span></div>
+    </article>
+    <article class="policy-card">
+      <div class="policy-top"><span class="policy-portfolio">Modelled</span><span class="status-badge status-beta">In beta</span></div>
+      <h3>The clerical function</h3>
+      <p class="policy-tagline">Reading, ranking, matching, drafting.</p>
+      <p class="policy-desc">What the stack replaces is the part of government that reads submissions, ranks waitlists, matches vacancies, schedules capacity and drafts documents. None of that was ever the reason anyone stood for Parliament, and all of it is what currently prevents members from doing the part that was.</p>
+      <div class="policy-meta"><span>Owner: TIKA</span><span>Eval: passing</span></div>
+    </article>
+    <article class="policy-card">
+      <div class="policy-top"><span class="policy-portfolio">Countersigned</span><span class="status-badge status-deployed">Locked</span></div>
+      <h3>Disagreements are published</h3>
+      <p class="policy-tagline">The human prevails, in public.</p>
+      <p class="policy-desc">Where a checkpoint’s output and the elected member’s judgement differ, the member prevails and both positions are published in full within twenty-four hours. Fourteen such disagreements have been published across the beta. The member prevailed in all fourteen, which is the only outcome the system permits.</p>
+      <div class="policy-meta"><span>Owner: AOTEA‑10T</span><span>Not configurable</span></div>
+    </article>
+  </div>
+  <div class="center"><a class="btn btn-ghost" href="playground.html">Ask a minister model about this →</a></div>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-status">
+    <div class="container footer-status-grid">
+      <div class="fs-item"><div class="fk">Build</div><div class="fv">Compiled successfully</div></div>
+      <div class="fs-item"><div class="fk">Version</div><div class="fv">Candidate Release 1.4.0</div></div>
+      <div class="fs-item"><div class="fk">Cards published</div><div class="fv">10 of 71</div></div>
+      <div class="fs-item"><div class="fk">Latency</div><div class="fv" id="live-latency">22 ms</div></div>
+      <div class="fs-item"><div class="fk">Democracy status</div><div class="fv fs-online">ONLINE</div></div>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="container footer-cols">
+      <div>
+        <div class="footer-brand"><span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></g></svg></span>Aotearoa Intelligence Party</div>
+        <p>Government treated as an engineering problem, deployed with care, benchmarked in public, and rolled back when necessary.</p>
+      </div>
+      <div class="footer-col"><h5>Campaign</h5><a href="policies.html">Platform</a><a href="ministers.html">Minister models</a><a href="electorates.html">Electorates</a><a href="playground.html">Playground</a><a href="store.html">Store</a></div>
+      <div class="footer-col"><h5>Documentation</h5><a href="research.html">Technical reports</a><a href="status.html">System status</a><a href="incidents.html">Incident history</a><a href="index.html#benchmarks">Evaluation suite</a></div>
+      <div class="footer-col"><h5>Real elections</h5><a href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a><a href="https://www.elections.nz" target="_blank" rel="noopener">elections.nz ↗</a></div>
+    </div>
+  </div>
+  <div class="footer-legal"><div class="container"><p><strong>Fictional campaign concept.</strong> The Aotearoa Intelligence Party is not a registered political party and is not affiliated with the New Zealand Government or the Electoral Commission. Electorate names and boundaries are real; every checkpoint, metric, corpus and incident described on this page is invented for a fictional organisation. For actual enrolment, boundary and voting information, use <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</p><p class="footer-copy">© <span class="js-year">2026</span> Aotearoa Intelligence Party · Policy outputs are provided without warranty, mandate, or coalition partner.</p></div></div>
+</footer>
+<script src="script.js"></script>
+<script src="electorates.js"></script>
+</body>
+</html>
