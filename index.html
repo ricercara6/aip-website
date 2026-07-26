@@ -16,7 +16,7 @@
       <span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></g></svg></span>
       <span>Aotearoa Intelligence Party<small>EST. 2026 · RELEASE 1.4.0</small></span>
     </a>
-    <nav class="nav-links" aria-label="Primary navigation"><span class="nav-indicator" aria-hidden="true"></span><a href="index.html" class="active">Home</a><a href="policies.html" class="">Platform</a><a href="ministers.html" class="">Models</a><a href="playground.html" class="">Playground</a><a href="research.html" class="">Research</a><a href="status.html" class="">Status</a><a href="store.html" class="">Store</a></nav>
+    <nav class="nav-links" aria-label="Primary navigation"><span class="nav-indicator" aria-hidden="true"></span><a href="index.html" class="active">Home</a><a href="policies.html" class="">Platform</a><a href="ministers.html" class="">Models</a><a href="electorates.html" class="">Electorates</a><a href="playground.html" class="">Playground</a><a href="research.html" class="">Research</a><a href="status.html" class="">Status</a></nav>
     <div class="nav-right">
       <a class="nav-vote-chip" href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -38,7 +38,7 @@
       <div class="panel-top"><span>System status</span><span class="pill-live">live</span></div>
       <div class="orbital"><span class="orbital-sat" aria-hidden="true"></span><span class="orbital-sat orbital-sat--b" aria-hidden="true"></span><div class="orbital-core">AOTEA<br>10T</div></div>
       <div class="panel-rows">
-        <div><span>Core model</span><b>AOTEA‑10T</b></div><div><span>Training status</span><b>pre-training</b></div><div><span>MPs replaced</span><b>120 → 0</b></div><div><span>Median latency</span><b id="hero-latency">22 ms</b></div><div><span>Cabinet uptime</span><b>99.99%</b></div><div><span>Rollback plan</span><b>Governor-General</b></div>
+        <div><span>Core model</span><b>AOTEA‑10T</b></div><div><span>Deployment</span><b>public beta · 10 electorates</b></div><div><span>Full-scale training</span><b>post-mandate</b></div><div><span>Electorate MPs retained</span><b>71 / 71</b></div><div><span>Median latency</span><b id="hero-latency">22 ms</b></div><div><span>Rollback plan</span><b>Governor-General</b></div>
       </div>
     </aside>
   </div>
@@ -219,6 +219,21 @@
 
 <section class="section section-alt"><div class="container">
   <div class="section-head reveal">
+    <span class="eyebrow">Electorates</span>
+    <h2>A model card for the place you live.</h2>
+    <p>Every electorate runs a regional checkpoint, fine-tuned on local material and documented the way a minister model is documented — including what it gets wrong here specifically. All 71 electorates continue to return an elected member of Parliament.</p>
+  </div>
+  <div class="el-featured reveal">
+    <a class="el-featured-card" href="electorates.html#southland"><span>South Island · Southland</span><b>Southland</b><em>187 km to the nearest MRI. 71% of surplus generation routed to public compute.</em></a>
+    <a class="el-featured-card" href="electorates.html#mangere"><span>Auckland · General</span><b>Māngere</b><em>0.4 dwellings available per 100 on the register. A ranking model cannot build a house.</em></a>
+    <a class="el-featured-card" href="electorates.html#te-tai-tonga"><span>Māori roll · Te Waipounamu</span><b>Te Tai Tonga</b><em>Checkpoint withheld pending sign-off from eight remaining authorities.</em></a>
+    <a class="el-featured-card" href="electorates.html#wellington-central"><span>Wellington · General</span><b>Wellington Central</b><em>2,910 public service roles affected. 2,760 redeployed. The electorate this costs the most.</em></a>
+  </div>
+  <div class="center"><a class="btn btn-primary" href="electorates.html">Find your electorate →</a></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head reveal">
     <span class="eyebrow">Reliability</span>
     <h2>The government that publishes its own outages.</h2>
     <p>Public administration is run as a production environment, so it fails the way production environments fail. Every degradation at SEV‑2 or above receives a blameless postmortem, published within five working days, with the action items tracked in public.</p>
@@ -267,7 +282,7 @@
         <div class="footer-brand"><span class="nav-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M13 5C8 5 5 8.5 5 12.5C5 15.5 7.2 18 10.2 18C12.3 18 14 16.4 14 14.5C14 13 12.9 11.8 11.5 11.8C10.5 11.8 9.7 12.5 9.7 13.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9.7" cy="13.4" r="1.4" fill="#E8A93A"/></g></svg></span>Aotearoa Intelligence Party</div>
         <p>Government treated as an engineering problem, deployed with care, benchmarked in public, and rolled back when necessary.</p>
       </div>
-      <div class="footer-col"><h5>Campaign</h5><a href="policies.html">Platform</a><a href="ministers.html">Minister models</a><a href="playground.html">Playground</a><a href="store.html">Store</a></div>
+      <div class="footer-col"><h5>Campaign</h5><a href="policies.html">Platform</a><a href="ministers.html">Minister models</a><a href="electorates.html">Electorates</a><a href="playground.html">Playground</a><a href="store.html">Store</a></div>
       <div class="footer-col"><h5>Documentation</h5><a href="research.html">Technical reports</a><a href="status.html">System status</a><a href="incidents.html">Incident history</a><a href="index.html#benchmarks">Evaluation suite</a></div>
       <div class="footer-col"><h5>Real elections</h5><a href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a><a href="https://www.elections.nz" target="_blank" rel="noopener">elections.nz ↗</a></div>
     </div>
