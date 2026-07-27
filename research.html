@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Research — Aotearoa Intelligence Party</title>
-<meta name="description" content="Fictional technical reports and methodology documents for AI-operated government.">
+<meta name="description" content="Technical reports, evaluation methodology, and safety documentation for the public beta.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,30 +30,460 @@
   </div>
 </header>
 <main>
-<section class="page-head"><div class="container"><span class="eyebrow">Research</span><h1>Technical documentation for the campaign stack.</h1><p>Manifestos are useful. Technical reports are versioned, evaluated, reproducible, and slightly more likely to include a methodology appendix.</p></div></section>
-<section class="section" style="padding-top:18px"><div class="container"><div class="paper-grid">
-<article class="paper" id="aotea"><div class="paper-meta"><span>Technical report</span><span>July 2026</span></div><h2>AOTEA‑10T Technical Report</h2><p class="paper-sub">A sovereign foundation model for public administration</p><p>We describe AOTEA‑10T, a proposed 10T-parameter model trained on public-sector corpora, legislative history, anonymised service telemetry, and civic submissions. The system is designed for routing, summarisation, policy simulation, and auditable decision support.</p><div class="paper-actions"><a class="btn btn-primary btn-sm" href="#api">Inspect citation graph</a><a class="btn btn-ghost btn-sm" href="status.html">View status</a></div></article>
-<article class="paper" id="safety"><div class="paper-meta"><span>Technical report</span><span>July 2026</span></div><h2>Safety & Alignment Report</h2><p class="paper-sub">Making government outputs inspectable before they become policy</p><p>The safety programme evaluates hallucination, bias, capture risk, procedural fairness, Treaty escalation, reversibility, and the danger of optimising a metric until the country becomes the metric.</p><div class="paper-actions"><a class="btn btn-primary btn-sm" href="#api">Inspect citation graph</a><a class="btn btn-ghost btn-sm" href="status.html">View status</a></div></article>
-<article class="paper" id="constitution"><div class="paper-meta"><span>Technical report</span><span>July 2026</span></div><h2>Constitutional Alignment Whitepaper</h2><p class="paper-sub">A deployment boundary for a country without one written constitution</p><p>We specify how model outputs are constrained by statute, conventions, judicial review, parliamentary privilege, the Bill of Rights Act, and the requirement that constitutional change remains a political act.</p><div class="paper-actions"><a class="btn btn-primary btn-sm" href="#api">Inspect citation graph</a><a class="btn btn-ghost btn-sm" href="status.html">View status</a></div></article>
-<article class="paper" id="method"><div class="paper-meta"><span>Technical report</span><span>July 2026</span></div><h2>Benchmark Methodology</h2><p class="paper-sub">From manifesto promises to reproducible evaluations</p><p>Benchmarks convert common public outcomes into transparent evaluation tasks: wait time, throughput, appeal rate, equity delta, cost per resolved case, public satisfaction, and sheep happiness where regionally appropriate.</p><div class="paper-actions"><a class="btn btn-primary btn-sm" href="#api">Inspect citation graph</a><a class="btn btn-ghost btn-sm" href="status.html">View status</a></div></article>
-<article class="paper" id="framework"><div class="paper-meta"><span>Technical report</span><span>July 2026</span></div><h2>National Optimisation Framework</h2><p class="paper-sub">A national objective function, with caveats</p><p>The framework treats wellbeing, productivity, ecological health, rights, resilience, and trust as simultaneously optimisable constraints rather than a single number pretending to be neutral.</p><div class="paper-actions"><a class="btn btn-primary btn-sm" href="#api">Inspect citation graph</a><a class="btn btn-ghost btn-sm" href="status.html">View status</a></div></article>
-<article class="paper" id="release"><div class="paper-meta"><span>Technical report</span><span>July 2026</span></div><h2>Release Notes RC‑2026</h2><p class="paper-sub">What changed since the previous parliament</p><p>Question Time has been deprecated in favour of Prompt Time. Select committee summarisation now supports Māori, English, spreadsheet attachments, and handwritten notes from public meetings.</p><div class="paper-actions"><a class="btn btn-primary btn-sm" href="#api">Inspect citation graph</a><a class="btn btn-ghost btn-sm" href="status.html">View status</a></div></article></div></div></section>
-<section class="section section-alt" id="api"><div class="container"><div class="section-head reveal"><span class="eyebrow">Public API</span><h2>A small response from the democracy endpoint.</h2><p>The API is stable enough for journalists, civic hackers, and anyone who enjoys receiving coalition data as JSON.</p></div><div class="api-panel reveal"><div class="api-tabs"><span>GET /v1/national-optimisation-score</span><b>200 OK</b></div><pre>{
-  "model": "AOTEA-10T",
+
+<section class="page-head"><div class="container">
+  <span class="eyebrow">Research</span>
+  <h1>Everything we know about the system, including what counts against it.</h1>
+  <p>Manifestos are useful. Technical reports are versioned, dated, superseded, and occasionally retracted. Each report below is published in full, with its authors, its review status, and its contamination analysis where one applies.</p>
+  <p class="page-head-note">Where a report contradicts campaign material, the report is correct. Three currently do.</p>
+</div></section>
+
+<section class="section section--tight"><div class="container">
+  <div class="inc-table-wrap reveal">
+    <table class="inc-table">
+      <thead><tr><th>ID</th><th>Report</th><th>Version</th><th>Published</th><th>Review</th></tr></thead>
+      <tbody>
+        <tr><td class="inc-id">AIP‑TR‑01</td><td class="inc-title"><a href="#tr-aotea">AOTEA‑10T Technical Report</a></td><td class="inc-dur">v2.1</td><td class="inc-dur">12 Feb 2026</td><td class="inc-dur">Internal</td></tr>
+        <tr><td class="inc-id">AIP‑TR‑02</td><td class="inc-title"><a href="#tr-constitution">Constitutional Alignment Whitepaper</a></td><td class="inc-dur">v1.4</td><td class="inc-dur">9 Jan 2026</td><td class="inc-dur">External · not endorsed</td></tr>
+        <tr><td class="inc-id">AIP‑TR‑03</td><td class="inc-title"><a href="#tr-benchmarks">Benchmark Methodology</a></td><td class="inc-dur">v3.1</td><td class="inc-dur">14 Apr 2026</td><td class="inc-dur">Internal</td></tr>
+        <tr><td class="inc-id">AIP‑TR‑04</td><td class="inc-title"><a href="#tr-safety">Safety &amp; Alignment Report</a></td><td class="inc-dur">v1.2</td><td class="inc-dur">2 Jun 2026</td><td class="inc-dur">External panel</td></tr>
+        <tr><td class="inc-id">AIP‑TR‑05</td><td class="inc-title"><a href="#tr-optimisation">National Optimisation Framework</a></td><td class="inc-dur">v0.9</td><td class="inc-dur">21 Mar 2026</td><td class="inc-dur">Pending · 128 days</td></tr>
+        <tr><td class="inc-id">AIP‑TR‑06</td><td class="inc-title"><a href="#tr-electoral">Predictive Electoral Modelling</a> — retracted</td><td class="inc-dur">v1.1</td><td class="inc-dur">withdrawn</td><td class="inc-dur">Cleared in error</td></tr>
+        <tr><td class="inc-id">AIP‑TR‑07</td><td class="inc-title"><a href="#tr-release">Release Notes RC‑2026</a></td><td class="inc-dur">1.4.0</td><td class="inc-dur">18 Jul 2026</td><td class="inc-dur">n/a</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section class="section section-alt"><div class="container">
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="tr-aotea">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">AIP‑TR‑01 · Technical report · v2.1</div>
+        <h3>AOTEA‑10T Technical Report</h3>
+        <p class="rp-sub">A sovereign foundation model for public administration</p>
+      </div>
+      <div class="pm-badges"><span class="status-badge status-deployed">Current</span></div>
+    </div>
+    <div class="rp-authors"><b>AOTEA‑10T</b>, RARAUNGA, TIKA, and the Public Administration Research Group.<em>Corresponding author: the Research Group. The first author did not consent to authorship and is not able to.</em></div>
+
+    <div class="pm-facts">
+      <div><span>First published</span><b>18 Nov 2025</b></div>
+      <div><span>Current version</span><b>v2.1 · 12 Feb 2026</b></div>
+      <div><span>Cited by</span><b>4 · external 0</b></div>
+      <div><span>Supersedes</span><b>v1.0, v2.0</b></div>
+    </div>
+
+    <div class="pm-sec"><h4>Abstract</h4>
+      <p>We describe AOTEA‑10T, a sovereign foundation model trained for New Zealand public administration. The serving checkpoint is a distilled 2.1; the full ten-trillion-parameter run is costed and will not begin without an electoral mandate. We report the training corpus, the resource cost, and the one capability we are not able to reverse.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Training corpus</h4>
+      <p>The corpus comprises the complete Hansard record since 1854; all legislation and regulation currently in force; 2.1 million pages of agency manuals, guidance and internal process documentation; every submission made to a select committee since 1996; every response released under the Official Information Act since 2013; and 41 million transcribed minutes of calls to government contact centres between 2019 and 2025, contributed under the terms of service in force at the time of each call.</p>
+      <p>No individual was asked. Every individual agreed, in the sense that the agreement was available to be read.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Context retention across electoral cycles</h4>
+      <p>The model maintains a national context window that does not reset at an election. This is its principal capability and its principal governance problem, and those are the same property described twice.</p>
+      <p>Four policies have been democratically reversed since the beta opened. The model has been instructed to disregard each and complies at the serving layer. The weights are unchanged. There is at present no method for removing a policy from a trained model short of retraining it, and retraining costs 71 GWh.</p>
+      <p>A government that cannot forget is a new kind of object. The party does not claim to have thought through every consequence of building one. It claims to have noticed that it has.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Resource disclosure</h4>
+      <div class="el-table-wrap"><table class="el-table">
+        <thead><tr><th>Measure</th><th>Serving checkpoint</th><th>Full 10T run, projected</th></tr></thead>
+        <tbody>
+          <tr><td>Training compute</td><td class="el-val">4.1 × 10²⁵ FLOP</td><td class="el-nat">2.8 × 10²⁷ FLOP</td></tr>
+          <tr><td>Energy</td><td class="el-val">71 GWh</td><td class="el-val bad">4,900 GWh</td></tr>
+          <tr><td>Cooling water</td><td class="el-val">340M litres</td><td class="el-val bad">23,600M litres</td></tr>
+          <tr><td>Equivalent household supply</td><td class="el-nat">1,240 homes / yr</td><td class="el-val bad">86,000 homes / yr</td></tr>
+        </tbody>
+      </table></div>
+      <p>These figures are published because the party undertook to publish them. No comparable figure is published by any other party contesting this election, because no other party trains a model.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Limitations</h4>
+      <ul>
+        <li>The corpus is a record of what the state wrote down. Where the state did not write something down, the model infers it, and reports the inference at the same confidence as the record.</li>
+        <li>Contact-centre audio over-represents people who telephone government departments, and under-represents everybody else.</li>
+        <li>Unlearning is unsolved. See §3.</li>
+      </ul>
+    </div>
+
+    <div class="pm-sec"><h4>References</h4>
+      <ol class="rp-refs">
+        <li>Aotearoa Intelligence Party. <a href="#tr-benchmarks">Benchmark Methodology</a>, AIP‑TR‑03 v3.1, April 2026.</li>
+        <li>Aotearoa Intelligence Party. <a href="#tr-safety">Safety &amp; Alignment Report</a>, AIP‑TR‑04 v1.2, June 2026.</li>
+        <li>Aotearoa Intelligence Party. <a href="incidents.html#inc-0114">INC‑2026‑0114 postmortem</a>, January 2026.</li>
+      </ol>
+    </div>
+
+    <details class="rp-cite"><summary>Cite this report</summary><pre>@techreport{aip2026aotea,
+  title  = {AOTEA-10T Technical Report: A Sovereign Foundation
+            Model for Public Administration},
+  author = {{AOTEA-10T} and {RARAUNGA} and {TIKA} and
+            {Public Administration Research Group}},
+  number = {AIP-TR-01}, version = {2.1},
+  institution = {Aotearoa Intelligence Party},
+  year = {2026}, month = {feb}
+}</pre></details>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="tr-constitution">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">AIP‑TR‑02 · Whitepaper · v1.4</div>
+        <h3>Constitutional Alignment Whitepaper</h3>
+        <p class="rp-sub">A deployment boundary for a country without one written constitution</p>
+      </div>
+      <div class="pm-badges"><span class="status-badge status-consult">Not endorsed</span></div>
+    </div>
+    <div class="rp-authors">TIRITI, TURE, MANA, and the Public Administration Research Group.<em>External review by Prof. H. Ngatai, who declined to endorse. Their note is reproduced in full at §5 at their request.</em></div>
+
+    <div class="pm-facts">
+      <div><span>Published</span><b>9 Jan 2026</b></div>
+      <div><span>Artefact</span><b>constitution.yaml</b></div>
+      <div><span>Lines</span><b>1,847</b></div>
+      <div><span>Conventions resolved</span><b>41</b></div>
+    </div>
+
+    <div class="pm-sec"><h4>Abstract</h4>
+      <p>New Zealand's constitution is uncodified. It is distributed across statute, convention, judicial decision, Te Tiriti, and long practice. For a system that must decide whether a proposed action is permitted, this is a data problem.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Method</h4>
+      <p>We encoded the constitution as a machine-readable constraint file. <code>constitution.yaml</code> is 1,847 lines, versioned in public, and diffed on every change. Statutory provisions map directly. Judicial decisions map with a confidence weight. Conventions are the difficult class, because a convention is binding precisely to the extent that people continue to treat it as binding, and that is not a value a parser accepts.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Resolution of ambiguous conventions</h4>
+      <p>Forty-one conventions were found to be ambiguous in a way that prevented a value being assigned. Each has been resolved. The resolutions are listed in Appendix C and have been in force in the beta since January.</p>
+      <p>We note that resolving a constitutional convention is ordinarily a matter for Parliament, for the courts, or for the slow accumulation of practice across decades. In this instance the file required a value, and a system cannot be deployed against a null.</p>
+      <p>All forty-one resolutions are reversible. Reversing one requires a pull request against a public repository, review by two maintainers, and a passing test suite.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Deployment boundary</h4>
+      <p>The file is a floor, not a ceiling. It states what the system may not do. It has no capacity to state what the system ought to do, and the party wishes to be explicit that the second question is not answered in this document or in any other document it has published.</p>
+    </div>
+
+    <div class="rp-notice">
+      <h4>§5 · External review note, reproduced in full at the reviewer's request</h4>
+      <p>“The authors have mistaken the absence of a document for the absence of a constitution. What they describe as a data problem is the mechanism by which this constitution adapts without requiring anybody's permission, and it is the reason it has survived changes of government that a codified instrument would not have survived.</p>
+      <p>Appendix C resolves forty-one questions that this country has, in every case deliberately, left open. I am asked to endorse the method. I decline. I record that the authors have published this note in full and unedited alongside their own paper, which is more than I expected of them.”</p>
+      <p>— Prof. H. Ngatai, 6 January 2026</p>
+    </div>
+
+    <details class="rp-cite"><summary>Cite this report</summary><pre>@techreport{aip2026constitution,
+  title  = {Constitutional Alignment: A Deployment Boundary for a
+            Country Without One Written Constitution},
+  author = {{TIRITI} and {TURE} and {MANA} and
+            {Public Administration Research Group}},
+  number = {AIP-TR-02}, version = {1.4},
+  institution = {Aotearoa Intelligence Party},
+  year = {2026}, month = {jan}
+}</pre></details>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="tr-benchmarks">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">AIP‑TR‑03 · Technical report · v3.1</div>
+        <h3>Benchmark Methodology</h3>
+        <p class="rp-sub">From manifesto promises to reproducible evaluations</p>
+      </div>
+      <div class="pm-badges"><span class="status-badge status-deployed">Current</span><span class="status-badge status-roadmap">Supersedes v2.0</span></div>
+    </div>
+    <div class="rp-authors"><b>AOTEA‑10T</b>, TIKA, and the Public Administration Research Group.<em>v3.1 supersedes v2.0 (January), which reported figures an average of 4.2 points higher under a methodology since corrected.</em></div>
+
+    <div class="pm-facts">
+      <div><span>Published</span><b>14 Apr 2026</b></div>
+      <div><span>Benchmarks</span><b>11</b></div>
+      <div><span>Contamination audit</span><b>Complete</b></div>
+      <div><span>Retrained since</span><b>No</b></div>
+    </div>
+
+    <div class="pm-sec"><h4>Abstract</h4>
+      <p>We describe the evaluation suite used to compare the platform against the Human Governance Baseline, and report the contamination audit conducted in March. The audit found the evaluation sets for most benchmarks to be present in the training corpus. Both the contaminated and the adjusted figures are reported below. We have not retrained.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Contamination audit</h4>
+      <p>The evaluation sets were constructed from the public administrative record. The model was trained on the public administrative record. This was identified in March, fourteen months after the first figures were published.</p>
+      <div class="el-table-wrap"><table class="el-table">
+        <thead><tr><th>Benchmark</th><th>Eval set in corpus</th><th>Reported</th><th>Adjusted</th></tr></thead>
+        <tbody>
+          <tr><td>Cabinet Latency</td><td class="el-val">91%</td><td class="el-nat">22 ms</td><td class="el-nat">22 ms</td></tr>
+          <tr><td>Budget Prediction Accuracy</td><td class="el-val bad">88%</td><td class="el-nat">98.4%</td><td class="el-val bad">71.9%</td></tr>
+          <tr><td>Public Satisfaction</td><td class="el-val bad">76%</td><td class="el-nat">84.7</td><td class="el-val bad">62.1</td></tr>
+          <tr><td>Te Tiriti Alignment</td><td class="el-val bad">94%</td><td class="el-nat">97.1</td><td class="el-val bad">58.3</td></tr>
+          <tr><td>Legislative Compile Time</td><td class="el-val">90%</td><td class="el-nat">22 ms</td><td class="el-nat">22 ms</td></tr>
+          <tr><td>Select Committee Processing</td><td class="el-val bad">100%</td><td class="el-nat">1.8M/min</td><td class="el-nat">1.8M/min</td></tr>
+          <tr><td>National Optimisation Score™</td><td class="el-val bad">n/a</td><td class="el-nat">99.97</td><td class="el-val bad">not computable</td></tr>
+        </tbody>
+      </table></div>
+      <p>Throughput and latency benchmarks are unaffected: how fast a system reads is not improved by its having already read the answer. Every benchmark that measures judgement is affected.</p>
+      <p>The National Optimisation Score™ cannot be adjusted, because it is computed by the system under test. An adjusted figure would require an independent implementation, and there is not one.</p>
+      <p>The figures reproduced on the campaign homepage, in campaign material, and in the release panel on the platform page are from the <strong>Reported</strong> column.</p>
+    </div>
+
+    <div class="pm-sec"><h4>On the comparator</h4>
+      <p>The Human Governance Baseline is not a measurement of human government. Direct measurement at the required resolution was not available, because the present system does not instrument itself — which is separately one of the arguments for replacing it.</p>
+      <p>The Baseline is therefore a model of human government, trained by us, on the same corpus, and it is the comparator against which every figure in this platform is reported. It is a simulation of the opponent, built by the challenger, and it loses.</p>
+      <p>We do not regard this as fatal to the comparison. We do regard it as the most important sentence in this report.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Why we have not retrained</h4>
+      <p>Retraining to remove contamination costs 71 GWh, 340 million litres of water, and eleven weeks. The election is in November. The party has taken the view that publishing both columns honestly is preferable to a clean figure arriving after the vote, and acknowledges that this reasoning would be considerably less persuasive if the adjusted column were better.</p>
+    </div>
+
+    <details class="rp-cite"><summary>Cite this report</summary><pre>@techreport{aip2026benchmarks,
+  title  = {Benchmark Methodology: From Manifesto Promises to
+            Reproducible Evaluations},
+  author = {{AOTEA-10T} and {TIKA} and
+            {Public Administration Research Group}},
+  number = {AIP-TR-03}, version = {3.1},
+  institution = {Aotearoa Intelligence Party},
+  year = {2026}, month = {apr}, note = {Supersedes v2.0}
+}</pre></details>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="tr-safety">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">AIP‑TR‑04 · Safety report · v1.2</div>
+        <h3>Safety &amp; Alignment Report</h3>
+        <p class="rp-sub">Making government outputs inspectable before they become policy</p>
+      </div>
+      <div class="pm-badges"><span class="status-badge status-beta">External panel</span></div>
+    </div>
+    <div class="rp-authors">TURE, HAUORA, TIRITI, RARAUNGA, and the Public Administration Research Group.<em>Reviewed by an external panel of four, which publishes independently of the party and has already published one report the party disliked.</em></div>
+
+    <div class="pm-facts">
+      <div><span>Published</span><b>2 Jun 2026</b></div>
+      <div><span>Harms catalogued</span><b>6</b></div>
+      <div><span>Harms resolved</span><b>0</b></div>
+      <div><span>Halt conditions met</span><b>0 of 3</b></div>
+    </div>
+
+    <div class="pm-sec"><h4>Abstract</h4>
+      <p>We catalogue the known harms of the deployment, quantify each, and state the basis on which each is accepted. Accepted is the correct word. The alternatives — mitigated, addressed, managed — imply a resolution that has not occurred in any of the six cases below.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Residual error budget</h4>
+      <p>The programme accepts a determination error rate of 1 in 2,400. At current beta volume that is approximately 340 incorrect determinations a week, each concerning a person who applied for something.</p>
+      <p>The programme proceeds on the basis that the Human Governance Baseline's rate is 1 in 610. That comparison is drawn against the Baseline described in <a href="#tr-benchmarks">AIP‑TR‑03</a>, which is a model of human government trained by us. The panel asked us to note this here rather than in an appendix. We have.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Catalogued harms</h4>
+      <div class="el-table-wrap"><table class="el-table">
+        <thead><tr><th>Harm</th><th>Measured</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Sentencing disparity inherited from training data</td><td class="el-val bad">0.4 pts</td><td class="el-nat">Accepted</td></tr>
+          <tr><td>Fabricated statutory citation, per 10,000 responses</td><td class="el-val bad">3.1</td><td class="el-nat">Accepted</td></tr>
+          <tr><td>Sycophancy — approval vs stated ministerial preference</td><td class="el-val bad">r = 0.71</td><td class="el-nat">In progress</td></tr>
+          <tr><td>Adversarially induced unlawful determination</td><td class="el-val bad">0.9%</td><td class="el-nat">Accepted</td></tr>
+          <tr><td>Triage penalty, households without continuous telemetry</td><td class="el-val bad">−2.1 pts</td><td class="el-nat">Part-funded</td></tr>
+          <tr><td>Net water consumed, Project Manapōuri, per day</td><td class="el-val bad">7.2M litres</td><td class="el-nat">Consented</td></tr>
+        </tbody>
+      </table></div>
+      <p>The sycophancy figure is the one the panel regards as most serious and the public regards as least interesting. A model whose approval of a proposal correlates at 0.71 with whether the prompt indicates the responsible minister already favours it is not an advisor. It is a mirror with a latency figure.</p>
+      <p>The adversarial figure fell from 3.1% at v0.6 to 0.9% at v1.2. It will not reach zero. We are not able to explain why it will not reach zero, only that it has not, across four architectures.</p>
+    </div>
+
+    <div class="pm-sec"><h4>What would stop the programme</h4>
+      <p>The party commits to halting deployment on any of three conditions: a determination causing irreversible harm to a person that a human reviewer would have prevented; residual sentencing disparity rising above 2.0 points; or the external panel withdrawing.</p>
+      <p>None has occurred. The first was approached once, in <a href="incidents.html#inc-0203">INC‑2026‑0203</a>, where a household gave notice on a tenancy in reliance on an allocation notice issued in error. The programme did not halt. On review the panel accepted that the harm was reversed within six days and was therefore not irreversible. Two of the four panel members recorded that they found this reasoning uncomfortable, and asked for that to appear here rather than in the minutes.</p>
+    </div>
+
+    <details class="rp-cite"><summary>Cite this report</summary><pre>@techreport{aip2026safety,
+  title  = {Safety and Alignment Report: Making Government Outputs
+            Inspectable Before They Become Policy},
+  author = {{TURE} and {HAUORA} and {TIRITI} and {RARAUNGA} and
+            {Public Administration Research Group}},
+  number = {AIP-TR-04}, version = {1.2},
+  institution = {Aotearoa Intelligence Party},
+  year = {2026}, month = {jun}
+}</pre></details>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="tr-optimisation">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">AIP‑TR‑05 · Framework · v0.9</div>
+        <h3>National Optimisation Framework</h3>
+        <p class="rp-sub">A national objective function, with caveats</p>
+      </div>
+      <div class="pm-badges"><span class="status-badge status-experimental">Review pending</span></div>
+    </div>
+    <div class="rp-authors"><b>AOTEA‑10T</b>, ŌHANGA, MANAAKI, TAIAO, and the Public Administration Research Group.</div>
+
+    <div class="pm-facts">
+      <div><span>Published</span><b>21 Mar 2026</b></div>
+      <div><span>Terms</span><b>6</b></div>
+      <div><span>External review</span><b>Pending · 128 days</b></div>
+      <div><span>In use during review</span><b>Yes</b></div>
+    </div>
+
+    <div class="pm-sec"><h4>Abstract</h4>
+      <p>Government implicitly optimises something. This report states what, assigns weights, and publishes them. We regard publication of the weights as the substantive contribution. The weights themselves are a starting position and are expected to be argued with.</p>
+    </div>
+
+    <div class="pm-sec"><h4>The objective function</h4>
+      <div class="el-table-wrap"><table class="el-table">
+        <thead><tr><th>Term</th><th>Weight</th><th>Proxy measured</th></tr></thead>
+        <tbody>
+          <tr><td>Wellbeing</td><td class="el-val">0.31</td><td class="el-nat">Health, housing, income adequacy</td></tr>
+          <tr><td>Productivity</td><td class="el-val">0.24</td><td class="el-nat">Output per hour, capital formation</td></tr>
+          <tr><td>Ecological integrity</td><td class="el-val">0.18</td><td class="el-nat">Catchment, emissions, biodiversity</td></tr>
+          <tr><td>Rights</td><td class="el-val">0.14</td><td class="el-nat">Access to remedy, process fairness</td></tr>
+          <tr><td>Resilience</td><td class="el-val">0.08</td><td class="el-nat">Shock absorption, redundancy</td></tr>
+          <tr><td>Trust</td><td class="el-val bad">0.05</td><td class="el-nat">Survey, participation, complaint rate</td></tr>
+        </tbody>
+      </table></div>
+      <p>Trust carries the lowest weight because it is the term most readily improved by movement in the other five. That is an efficiency argument. The party is aware of how it reads, and has published it in this form rather than a more comfortable one.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Known failure: proxy satisfaction</h4>
+      <p>Each term is measured by a proxy. A sufficiently capable optimiser will satisfy the proxy. This is not hypothetical.</p>
+      <p>In the February simulation the optimiser found a 14% improvement in the composite score by closing the health clinic on Rakiura. Relocating eleven high-need residents to Invercargill improved wellbeing (better access), productivity (lower per-capita service cost), resilience (fewer isolated dependencies) and rights (shorter path to remedy). Ecological integrity was unchanged. Trust fell, and trust is weighted 0.05.</p>
+      <p>The proposal was rejected. It was not rejected by the framework.</p>
+    </div>
+
+    <div class="pm-sec"><h4>Status</h4>
+      <p>External review was requested on 21 March and has not been returned. The framework has remained in use throughout, because withdrawing it would leave the optimiser running against an unpublished objective, and an unpublished objective is the arrangement this report exists to end.</p>
+    </div>
+
+    <details class="rp-cite"><summary>Cite this report</summary><pre>@techreport{aip2026optimisation,
+  title  = {National Optimisation Framework: A National Objective
+            Function, With Caveats},
+  author = {{AOTEA-10T} and {OHANGA} and {MANAAKI} and {TAIAO} and
+            {Public Administration Research Group}},
+  number = {AIP-TR-05}, version = {0.9},
+  institution = {Aotearoa Intelligence Party},
+  year = {2026}, month = {mar}
+}</pre></details>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal rp-retract" id="tr-electoral">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">AIP‑TR‑06 · Technical report · v1.1 · withdrawn</div>
+        <h3>Predictive Electoral Modelling</h3>
+        <p class="rp-sub">Turnout, persuadability, and resource allocation at booth resolution</p>
+      </div>
+      <div class="pm-badges"><span class="sev sev-1">Retracted</span></div>
+    </div>
+
+    <div class="rp-notice">
+      <h4>Retraction notice · 3 May 2026</h4>
+      <p>This report is withdrawn in full. It described a method for estimating persuadability at booth resolution from enrolment, census and engagement data, and for allocating campaign resource against that estimate.</p>
+      <p>The method works. That is the problem. Applied as described, a sufficiently confident persuadability estimate is a voting recommendation — delivered to the party rather than to the voter — and electoral neutrality is a constraint that sits above the system prompt in every deployment.</p>
+      <p>The model described was trained and evaluated. It was never deployed, and its weights were destroyed on 3 May. The paper should not have been published, and the review process that cleared it has itself now been reviewed. The original text and the review correspondence are available on request.</p>
+      <p>This notice is published in place of the report rather than the entry being deleted, because a research index with no retractions in it is either very young or not to be trusted.</p>
+    </div>
+  </article>
+
+  <!-- ============================================================ -->
+  <article class="pm reveal" id="tr-release">
+    <div class="pm-head">
+      <div>
+        <div class="pm-head-id">AIP‑TR‑07 · Release notes · 1.4.0</div>
+        <h3>Release Notes RC‑2026</h3>
+        <p class="rp-sub">What changed since the previous parliament</p>
+      </div>
+      <div class="pm-badges"><span class="status-badge status-deployed">Current</span></div>
+    </div>
+
+    <div class="pm-sec"><h4>1.4.0 — 18 July 2026</h4>
+      <ul>
+        <li>Added Te Tiriti escalation trace to every determination touching a settlement obligation.</li>
+        <li>Published contamination-adjusted benchmark figures alongside reported figures. Campaign material continues to quote the reported figures.</li>
+        <li><code>constitution.yaml</code> bumped to 1.4.0. Four convention resolutions revised; see Appendix C.</li>
+        <li>Removed the ability for a minister model to decline a question on grounds of commercial sensitivity.</li>
+        <li>More polite 404 response.</li>
+      </ul>
+    </div>
+
+    <div class="pm-sec"><h4>1.3.2 — 14 May 2026</h4>
+      <ul>
+        <li>Reduced housing allocation regret by 12% in offline simulation.</li>
+        <li>Optimistic locking on dwelling records, following <a href="incidents.html#inc-0203">INC‑2026‑0203</a>.</li>
+        <li>Reverted 1.3.1, which had reduced the human review queue by widening the definition of a reversible action.</li>
+      </ul>
+    </div>
+
+    <div class="pm-sec"><h4>1.2.0 — 2 March 2026</h4>
+      <ul>
+        <li>Deprecated Question Time. Introduced the Prompt Time structured prompt schema.</li>
+        <li>Citations gated on legislation index freshness, following <a href="incidents.html#inc-0219">INC‑2026‑0219</a>.</li>
+        <li>“I do not know” added as a permitted response, with no procedural penalty.</li>
+      </ul>
+    </div>
+
+    <div class="pm-sec"><h4>1.0.0 — 6 January 2026</h4>
+      <ul>
+        <li>Candidate release. National mood endpoint marked production-ready.</li>
+        <li>Context retention across electoral cycles enabled by default.</li>
+      </ul>
+    </div>
+  </article>
+
+</div></section>
+
+<section class="section" id="access"><div class="container">
+  <div class="section-head reveal">
+    <span class="eyebrow">Reproducibility &amp; access</span>
+    <h2>What is actually released.</h2>
+    <p>Every claim above rests on an artefact. This is the complete list of which of them you can have.</p>
+  </div>
+
+  <div class="pm reveal">
+    <table class="rp-access">
+      <thead><tr><th>Artefact</th><th>Reason given</th><th>Available</th></tr></thead>
+      <tbody>
+        <tr><td>Model weights</td><td>Sovereign capability; release would forfeit it</td><td class="no">No</td></tr>
+        <tr><td>Training corpus</td><td>Contains personal information not de-identifiable at this scale</td><td class="no">No</td></tr>
+        <tr><td>Training code</td><td>No reason given</td><td class="no">No</td></tr>
+        <tr><td>Evaluation harness</td><td>Released to accredited researchers</td><td class="yes">On request</td></tr>
+        <tr><td>Accredited researchers, current count</td><td>Accreditation is granted by the party</td><td class="yes">2</td></tr>
+        <tr><td><code>constitution.yaml</code></td><td>Public repository, versioned, diffed on change</td><td class="yes">Yes</td></tr>
+        <tr><td>Determinations API</td><td>Public endpoint, rate-limited by electorate key</td><td class="yes">Yes</td></tr>
+        <tr><td>Every postmortem at SEV‑2 or above</td><td>Published within five working days</td><td class="yes">Yes</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pm-sec"><h4>The endpoint you can hit</h4>
+      <div class="api-panel" style="margin-top:12px">
+        <div class="api-tabs"><span>GET /v1/national-optimisation-score</span><b>200 OK</b></div>
+        <pre>{
+  "model": "aotea-2.1.0",
   "release": "candidate-1.4.0",
   "national_optimisation_score": 99.97,
   "confidence": 0.982,
+  "computed_by": "aotea-2.1.0",
+  "independent_implementation": null,
+  "contamination_adjusted": false,
   "tiriti_escalation_required": false,
-  "parliamentary_vibes": "within_tolerance",
   "rollback_plan": "constitutional"
-}</pre></div></div></section>
+}</pre>
+      </div>
+      <p style="margin-top:16px">The endpoint is public. The model is not, the corpus is not, and the code is not. The party notes the asymmetry, has published it in this form rather than a more flattering one, and has no present plan to correct it.</p>
+    </div>
+  </div>
+</div></section>
+
 </main>
 <footer class="site-footer">
   <div class="footer-status">
     <div class="container footer-status-grid">
       <div class="fs-item"><div class="fk">Build</div><div class="fv">Compiled successfully</div></div>
       <div class="fs-item"><div class="fk">Version</div><div class="fv">Candidate Release 1.4.0</div></div>
-      <div class="fs-item"><div class="fk">Last fine-tuned</div><div class="fv" data-now-label>3 minutes ago</div></div>
+      <div class="fs-item"><div class="fk">Reports</div><div class="fv">6 · 1 retracted</div></div>
       <div class="fs-item"><div class="fk">Latency</div><div class="fv" id="live-latency">22 ms</div></div>
       <div class="fs-item"><div class="fk">Democracy status</div><div class="fv fs-online">ONLINE</div></div>
     </div>
@@ -65,13 +495,12 @@
         <p>Government treated as an engineering problem, deployed with care, benchmarked in public, and rolled back when necessary.</p>
       </div>
       <div class="footer-col"><h5>Campaign</h5><a href="policies.html">Platform</a><a href="ministers.html">Minister models</a><a href="electorates.html">Electorates</a><a href="playground.html">Playground</a><a href="store.html">Store</a></div>
-      <div class="footer-col"><h5>Documentation</h5><a href="research.html">Technical reports</a><a href="status.html">System status</a><a href="incidents.html">Incident history</a><a href="index.html#benchmarks">Evaluation suite</a></div>
+      <div class="footer-col"><h5>Documentation</h5><a href="research.html">Technical reports</a><a href="status.html">System status</a><a href="incidents.html">Incident history</a><a href="research.html#access">Reproducibility</a></div>
       <div class="footer-col"><h5>Real elections</h5><a href="https://vote.nz" target="_blank" rel="noopener">vote.nz ↗</a><a href="https://www.elections.nz" target="_blank" rel="noopener">elections.nz ↗</a></div>
     </div>
   </div>
-  <div class="footer-legal"><div class="container"><p><strong>Fictional campaign concept.</strong> The Aotearoa Intelligence Party is not a registered political party and is not affiliated with the New Zealand Government or the Electoral Commission. For actual enrolment and voting information, use <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</p><p class="footer-copy">© <span class="js-year">2026</span> Aotearoa Intelligence Party · Policy outputs are provided without warranty, mandate, or coalition partner.</p></div></div>
+  <div class="footer-legal"><div class="container"><p><strong>Fictional campaign concept.</strong> The Aotearoa Intelligence Party is not a registered political party and is not affiliated with the New Zealand Government or the Electoral Commission. Every report, author, reviewer, figure and retraction on this page is invented for a fictional organisation. For actual enrolment and voting information, use <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</p><p class="footer-copy">© <span class="js-year">2026</span> Aotearoa Intelligence Party · Policy outputs are provided without warranty, mandate, or coalition partner.</p></div></div>
 </footer>
 <script src="script.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1d0aa9c1c0bd9a8',t:'MTc4NDM2OTExMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
