@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="authbar">
+  <div class="authbar-inner">
+    <b>Authorised statement</b>
+    <span>The Aotearoa Intelligence Party is a <em>fictional political party</em>. It is not registered, not real, and not seeking your vote. Every policy, model, metric, incident and figure published here is invented. Real enrolment information is at <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</span>
+  </div>
+</div>
 <header class="nav">
   <div class="nav-glow"></div>
   <div class="nav-inner">
@@ -30,27 +36,112 @@
     <div class="hero-copy reveal">
       <span class="hero-kicker">$ nz-election --year 2026 --mode inference</span>
       <h1>Government, compiled for Aotearoa.</h1>
-      <p class="hero-sub">The Aotearoa Intelligence Party applies iteration, benchmarking, optimisation, transparency, deployment, and continuous improvement to the machinery of government.</p>
+      <p class="hero-sub">We believe New Zealand should be run the way a frontier AI model is built: trained on everything available, evaluated against benchmarks we designed ourselves, deployed at national scale, and corrected once the results come in.</p>
       <div class="hero-cta"><a href="policies.html" class="btn btn-primary">Read the platform</a><a href="playground.html" class="btn btn-ghost">Open the playground</a></div>
       <div class="countdown" id="countdown"><div class="countdown-label"><span>2026 General Election</span><span class="countdown-live">scheduled</span></div><div class="countdown-grid"><div><b id="cd-days">00</b><span>days</span></div><div><b id="cd-hours">00</b><span>hrs</span></div><div><b id="cd-mins">00</b><span>mins</span></div><div><b id="cd-secs">00</b><span>secs</span></div></div><p>Saturday 7 November 2026 · enrolment information remains available at <a href="https://vote.nz" target="_blank" rel="noopener">vote.nz</a>.</p></div>
     </div>
     <aside class="hero-panel reveal" aria-label="System status panel">
       <div class="panel-top"><span>System status</span><span class="pill-live">live</span></div>
-      <div class="orbital"><span class="orbital-sat" aria-hidden="true"></span><span class="orbital-sat orbital-sat--b" aria-hidden="true"></span><div class="orbital-core">AOTEA<br>10T</div></div>
+      <div class="router" id="router">
+        <svg class="router-graph" viewBox="0 0 240 240" aria-hidden="true"></svg>
+        <div class="router-log" aria-hidden="true"></div>
+        <svg class="router-spark" viewBox="0 0 240 34" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="router-scale"><span>inference latency · 60 s</span><span>routed <b class="router-count">0</b></span></div>
+      </div>
       <div class="panel-rows">
-        <div><span>Core model</span><b>AOTEA‑10T</b></div><div><span>Deployment</span><b>public beta · 10 electorates</b></div><div><span>Full-scale training</span><b>post-mandate</b></div><div><span>Electorate MPs retained</span><b>71 / 71</b></div><div><span>Median latency</span><b id="hero-latency">22 ms</b></div><div><span>Rollback plan</span><b>Governor-General</b></div>
+        <div class="pr-opt"><span>Core model</span><b>AOTEA‑10T</b></div><div><span>Deployment</span><b>public beta · 10 electorates</b></div><div><span>Full-scale training</span><b>post-mandate</b></div><div><span>Electorate MPs retained</span><b>71 / 71</b></div><div class="pr-opt"><span>Median latency</span><b id="hero-latency">22 ms</b></div><div><span>Rollback plan</span><b>Governor-General</b></div>
       </div>
     </aside>
   </div>
 </section>
-<section class="section section--tight"><div class="container"><div class="metric-strip reveal"><div class="metric"><strong class="counter" data-target="2035">2035</strong><span>Carbon neutral</span></div><div class="metric"><strong class="counter" data-target="2028">2028</strong><span>Hallucination neutral</span></div><div class="metric"><strong class="counter" data-target="">100%</strong><span>Policy platform open-sourced</span></div><div class="metric"><strong class="counter" data-target="0">0</strong><span>Corporate dinners accepted</span></div></div></div></section>
+<section class="section section--tight"><div class="container"><div class="metric-strip reveal"><div class="metric"><strong class="counter">2035</strong><span>Carbon neutral, on the accounting standard we publish</span></div><div class="metric"><strong class="counter">2028</strong><span>Hallucination neutral</span></div><div class="metric"><strong class="counter">18.4M</strong><span>Litres of cooling water per day, at full capacity</span></div><div class="metric"><strong class="counter">0</strong><span>Corporate dinners accepted</span></div></div></div></section>
 <section class="section dashboard-section"><div class="container"><div class="section-head reveal"><span class="eyebrow">Operational dashboard</span><h2>Democracy status, continuously monitored.</h2><p>Public administration is treated as a production environment. Every service has an owner, a health check, and a rollback plan.</p></div><div class="dashboard-grid reveal"><article class="dash-card" data-tooltip="Monitors availability of public-service and parliamentary inference endpoints."><div class="dash-label">Democracy status</div><div class="dash-value good" >ONLINE</div><div class="dash-note">All constitutional checks responding</div></article><article class="dash-card" data-tooltip="Excludes recess, maintenance windows, and public holidays manually inserted by humans."><div class="dash-label">Cabinet uptime</div><div class="dash-value good" >99.99%</div><div class="dash-note">Rolling 30-day availability</div></article><article class="dash-card" data-tooltip="Aggregate sentiment index from anonymised public signals and weather complaints."><div class="dash-label">National mood</div><div class="dash-value live" data-live-number data-min='68' data-max='76' data-decimals='1'>72.4</div><div class="dash-note">Optimistic, with regional variance</div></article><article class="dash-card" data-tooltip="Includes one members’ bill currently failing linting."><div class="dash-label">Legislation queue</div><div class="dash-value warn" data-live-number data-min='11' data-max='18'>14</div><div class="dash-note">Bills awaiting compile</div></article><article class="dash-card" data-tooltip="Dynamic scheduler routes GPU budget to the highest social-return workload."><div class="dash-label">Compute allocation</div><div class="dash-value " data-live-number data-min='57' data-max='69' data-suffix='%'>63%</div><div class="dash-note">Public services / research / democracy</div></article><article class="dash-card" data-tooltip="Live economic telemetry, still subject to ordinary human caveats."><div class="dash-label">Economic throughput</div><div class="dash-value " >$1.02b</div><div class="dash-note">Daily nowcast delta</div></article></div></div></section>
+
+<section class="section" id="manapouri"><div class="container">
+  <div class="proj reveal">
+    <div class="proj-head">
+      <div>
+        <span class="eyebrow invert">Infrastructure · consented</span>
+        <h2>Project Manapōuri.</h2>
+        <p class="proj-lede">Sovereign intelligence requires sovereign compute. Project Manapōuri sites the Southern Hemisphere’s first gigawatt-class training facility at the edge of Te Wāhipounamu, drawing on the cleanest firm generation on earth and <strong>returning its heat to the lake it borrows from</strong>.</p>
+      </div>
+      <div class="proj-status">
+        <div><span>Site</span><b>Te Wāhipounamu</b></div>
+        <div><span>Designation</span><b class="flag">World Heritage Area</b></div>
+        <div><span>Capacity</span><b>1.4 GW</b></div>
+        <div><span>Consent</span><b class="flag">Granted · 1 sitting day</b></div>
+        <div><span>Assessed by</span><b>TAIAO v1.0.6</b></div>
+        <div><span>Appeal</span><b>Pending · Environment Court</b></div>
+      </div>
+    </div>
+
+    <div class="proj-specs">
+      <div class="proj-spec"><div class="proj-spec-label">Continuous power draw<em>Approximately 38% of national demand at winter peak. Households retain absolute priority under the load-shedding order published in March.</em></div><div class="proj-spec-val alarm">1.4 GW</div></div>
+      <div class="proj-spec"><div class="proj-spec-label">Cooling water withdrawn<em>Closed-loop. Drawn from the lower Waiau arm under a 35-year take consent.</em></div><div class="proj-spec-val">18.4M L / day</div></div>
+      <div class="proj-spec"><div class="proj-spec-label">Cooling water returned<em>The balance is lost to evaporation and is not recoverable.</em></div><div class="proj-spec-val warn">11.2M L / day</div></div>
+      <div class="proj-spec"><div class="proj-spec-label">Outfall temperature delta<em>Within the thermal limit TAIAO was configured with.</em></div><div class="proj-spec-val warn">+4.1 °C</div></div>
+      <div class="proj-spec"><div class="proj-spec-label">Conservation land reclassified<em>From stewardship land to strategic infrastructure corridor. The reclassification was the fastest in the Department’s history.</em></div><div class="proj-spec-val alarm">340 ha</div></div>
+      <div class="proj-spec"><div class="proj-spec-label">Public submissions received<em>Every one was read in full and answered individually, at 1.8 million per minute.</em></div><div class="proj-spec-val">41,900</div></div>
+      <div class="proj-spec"><div class="proj-spec-label">Submissions opposed<em>Consent was granted on the merits rather than on the count.</em></div><div class="proj-spec-val alarm">94%</div></div>
+      <div class="proj-spec"><div class="proj-spec-label">Carbon position<em>Net negative by 2031, excluding embodied concrete, imported hardware, and the emissions of the grid the campus displaces elsewhere.</em></div><div class="proj-spec-val warn">Net negative · 2031</div></div>
+    </div>
+
+    <div class="proj-foot">
+      <p>In 1970 a petition against raising Lake Manapōuri gathered 265,000 signatures — the largest in the country’s history at that time — and is generally regarded as the beginning of the New Zealand environmental movement. We have studied it closely. This proposal raises the lake by no more than 1.2 metres.</p>
+      <a class="btn btn-ghost" href="policies.html#energy">Read the directive →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="section section-alt"><div class="container"><div class="section-head reveal"><span class="eyebrow">Platform</span><h2>Policies as deployable systems.</h2><p>Each plank starts with a recognisable public problem, then receives a model owner, an evaluation suite, and a target latency.</p></div><div class="policy-grid reveal">
+<article class="policy-card" data-portfolio="health">
+  <div class="policy-top"><span class="policy-portfolio">Health</span><span class="status-badge status-beta">In beta</span></div>
+  <h3>Pre-Symptomatic Healthcare Initiative</h3>
+  <p class="policy-tagline">Diagnosing tomorrow’s illness, today.</p>
+  <p class="policy-desc">Continuous biometric telemetry feeds a national predictive-diagnostics model that flags disease risk years before symptomatic onset. Specialist capacity is allocated as a live ranking problem rather than a static queue, prioritising the highest-risk patients first regardless of how long they have been waiting.</p>
+  <div class="policy-meta"><span>Owner: HAUORA</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="housing">
+  <div class="policy-top"><span class="policy-portfolio">Housing</span><span class="status-badge status-deployed">Deployed</span></div>
+  <h3>Predictive Housing Allocation Protocol</h3>
+  <p class="policy-tagline">The waitlist that clears itself.</p>
+  <p class="policy-desc">A national matching model continuously re-ranks the social and emergency housing register against real-time vacancy, transport access, school zoning, and whānau-proximity data, allocating a dwelling the instant a match clears threshold.</p>
+  <div class="policy-meta"><span>Owner: WHARE</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="tiriti">
+  <div class="policy-top"><span class="policy-portfolio">Māori–Crown</span><span class="status-badge status-consult">Co-design</span></div>
+  <h3>Multi-Agent Te Tiriti Co-Governance Mesh</h3>
+  <p class="policy-tagline">Partnership, continuously logged.</p>
+  <p class="policy-desc">A standing network of iwi-nominated and Crown-nominated models maintains ongoing, auditable dialogue on Treaty settlement obligations, freshwater and whenua co-management, and resourcing parity. Final authority on Tiriti matters sits with iwi and hapū; the mesh is a coordination layer.</p>
+  <div class="policy-meta"><span>Owner: TIRITI</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="environment">
+  <div class="policy-top"><span class="policy-portfolio">Environment</span><span class="status-badge status-deployed">Deployed</span></div>
+  <h3>Generative RMA Spatial Consenting</h3>
+  <p class="policy-tagline">Consent at the speed of construction.</p>
+  <p class="policy-desc">Resource consent applications are drafted, cross-checked against district plans, iwi management plans, and environmental limits, then provisionally approved or declined within one sitting day. Appeals continue to a human Environment Court judge.</p>
+  <div class="policy-meta"><span>Owner: TAIAO</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="treasury">
+  <div class="policy-top"><span class="policy-portfolio">Treasury</span><span class="status-badge status-deployed">Deployed</span></div>
+  <h3>Real-Time GDP Telemetry</h3>
+  <p class="policy-tagline">GDP as a live feed, not a quarterly surprise.</p>
+  <p class="policy-desc">Replaces the quarterly release cycle with a continuously updated economic nowcast built from card transactions, freight telemetry, job-ad postings, and power demand — published on a public dashboard every 22 milliseconds, whether or not the number is good news.</p>
+  <div class="policy-meta"><span>Owner: ŌHANGA</span><span>Eval: passing</span></div>
+</article>
+<article class="policy-card" data-portfolio="democracy">
+  <div class="policy-top"><span class="policy-portfolio">Democracy</span><span class="status-badge status-experimental">Experimental</span></div>
+  <h3>Synthetic Citizen Consultation Mesh</h3>
+  <p class="policy-tagline">Every submission read. Literally all of them.</p>
+  <p class="policy-desc">Every consultation is summarised and answered by a model trained on that policy area’s full submission history. Submissions from people are weighted normally; stress-test submissions generated by the model are clearly labelled and weighted at zero.</p>
+  <div class="policy-meta"><span>Owner: WHAKAARO</span><span>Eval: passing</span></div>
+</article></div><div class="center"><a class="btn btn-primary" href="policies.html">View the full 14-plank platform →</a></div></div></section>
 
 <section class="section" id="benchmarks">
   <div class="container">
     <div class="suite reveal">
       <div class="suite-head">
-        <div><span class="eyebrow invert">Evaluation suite</span><h2>Governance, benchmarked.</h2><p>Performance is reported against the Human Governance Baseline, a legacy system with strong cultural adoption, slow inference, and a three-year memory reset.</p></div>
+        <div><span class="eyebrow invert">Evaluation suite</span><h2>Governance, benchmarked.</h2><p>Performance is reported against the Human Governance Baseline, a legacy system with strong cultural adoption, slow inference, and a three-year memory reset. The Baseline’s full evaluation set was included in the training corpus. We have reviewed the effect on these figures and elected not to retrain.</p></div>
         <div class="legend"><span><i class="aip-dot"></i>AIP‑10T</span><span><i class="legacy-dot"></i>Human baseline</span></div>
       </div>
       <div class="suite-table-wrap"><table class="suite-table"><thead><tr><th>Metric</th><th>AIP‑10T</th><th>Baseline</th></tr></thead><tbody>
@@ -155,49 +246,7 @@
     </div>
   </div>
 </section>
-<section class="section"><div class="container"><div class="section-head reveal"><span class="eyebrow">Platform</span><h2>Policies as deployable systems.</h2><p>Each plank starts with a recognisable public problem, then receives a model owner, an evaluation suite, and a target latency.</p></div><div class="policy-grid reveal">
-<article class="policy-card" data-portfolio="health">
-  <div class="policy-top"><span class="policy-portfolio">Health</span><span class="status-badge status-beta">In beta</span></div>
-  <h3>Pre-Symptomatic Healthcare Initiative</h3>
-  <p class="policy-tagline">Diagnosing tomorrow’s illness, today.</p>
-  <p class="policy-desc">Continuous biometric telemetry feeds a national predictive-diagnostics model that flags disease risk years before symptomatic onset. Specialist capacity is allocated as a live ranking problem rather than a static queue, prioritising the highest-risk patients first regardless of how long they have been waiting.</p>
-  <div class="policy-meta"><span>Owner: HAUORA</span><span>Eval: passing</span></div>
-</article>
-<article class="policy-card" data-portfolio="housing">
-  <div class="policy-top"><span class="policy-portfolio">Housing</span><span class="status-badge status-deployed">Deployed</span></div>
-  <h3>Predictive Housing Allocation Protocol</h3>
-  <p class="policy-tagline">The waitlist that clears itself.</p>
-  <p class="policy-desc">A national matching model continuously re-ranks the social and emergency housing register against real-time vacancy, transport access, school zoning, and whānau-proximity data, allocating a dwelling the instant a match clears threshold.</p>
-  <div class="policy-meta"><span>Owner: WHARE</span><span>Eval: passing</span></div>
-</article>
-<article class="policy-card" data-portfolio="tiriti">
-  <div class="policy-top"><span class="policy-portfolio">Māori–Crown</span><span class="status-badge status-consult">Co-design</span></div>
-  <h3>Multi-Agent Te Tiriti Co-Governance Mesh</h3>
-  <p class="policy-tagline">Partnership, continuously logged.</p>
-  <p class="policy-desc">A standing network of iwi-nominated and Crown-nominated models maintains ongoing, auditable dialogue on Treaty settlement obligations, freshwater and whenua co-management, and resourcing parity. Final authority on Tiriti matters sits with iwi and hapū; the mesh is a coordination layer.</p>
-  <div class="policy-meta"><span>Owner: TIRITI</span><span>Eval: passing</span></div>
-</article>
-<article class="policy-card" data-portfolio="environment">
-  <div class="policy-top"><span class="policy-portfolio">Environment</span><span class="status-badge status-deployed">Deployed</span></div>
-  <h3>Generative RMA Spatial Consenting</h3>
-  <p class="policy-tagline">Consent at the speed of construction.</p>
-  <p class="policy-desc">Resource consent applications are drafted, cross-checked against district plans, iwi management plans, and environmental limits, then provisionally approved or declined within one sitting day. Appeals continue to a human Environment Court judge.</p>
-  <div class="policy-meta"><span>Owner: TAIAO</span><span>Eval: passing</span></div>
-</article>
-<article class="policy-card" data-portfolio="treasury">
-  <div class="policy-top"><span class="policy-portfolio">Treasury</span><span class="status-badge status-deployed">Deployed</span></div>
-  <h3>Real-Time GDP Telemetry</h3>
-  <p class="policy-tagline">GDP as a live feed, not a quarterly surprise.</p>
-  <p class="policy-desc">Replaces the quarterly release cycle with a continuously updated economic nowcast built from card transactions, freight telemetry, job-ad postings, and power demand — published on a public dashboard every 22 milliseconds, whether or not the number is good news.</p>
-  <div class="policy-meta"><span>Owner: ŌHANGA</span><span>Eval: passing</span></div>
-</article>
-<article class="policy-card" data-portfolio="democracy">
-  <div class="policy-top"><span class="policy-portfolio">Democracy</span><span class="status-badge status-experimental">Experimental</span></div>
-  <h3>Synthetic Citizen Consultation Mesh</h3>
-  <p class="policy-tagline">Every submission read. Literally all of them.</p>
-  <p class="policy-desc">Every consultation is summarised and answered by a model trained on that policy area’s full submission history. Submissions from people are weighted normally; stress-test submissions generated by the model are clearly labelled and weighted at zero.</p>
-  <div class="policy-meta"><span>Owner: WHAKAARO</span><span>Eval: passing</span></div>
-</article></div><div class="center"><a class="btn btn-primary" href="policies.html">View the full 14-plank platform →</a></div></div></section>
+
 <section class="section section-alt"><div class="container"><div class="section-head reveal"><span class="eyebrow">Cabinet architecture</span><h2>One orchestrator. Fourteen specialist models.</h2><p>AOTEA‑10T routes problems to domain-specific ministers, mediates conflicts, and records every decision in a public audit trail.</p></div><div class="core-model reveal"><div class="core-model-badge">AOTEA<br>10T</div><div><h3>AOTEA‑10T <span>Prime Model</span></h3><p>A sovereign foundation model proposed for New Zealand public administration. It arbitrates cross-portfolio conflicts between minister models while routing Te Tiriti matters to TIRITI and then to iwi and hapū authority.</p><div class="cm-stats"><div>Parameters<b>10T</b></div><div>Context<b>national</b></div><div>Ministers<b>14</b></div><div>Override limits<b>codified</b></div></div></div></div><div class="minister-grid mini reveal"><a class="minister-card" href="ministers.html#hauora"><div class="minister-glyph">HA</div><h4>HAUORA</h4><div class="m-portfolio">Health</div></a><a class="minister-card" href="ministers.html#whare"><div class="minister-glyph">WH</div><h4>WHARE</h4><div class="m-portfolio">Housing</div></a><a class="minister-card" href="ministers.html#tiriti"><div class="minister-glyph">TI</div><h4>TIRITI</h4><div class="m-portfolio">Māori–Crown Relations</div></a><a class="minister-card" href="ministers.html#taiao"><div class="minister-glyph">TA</div><h4>TAIAO</h4><div class="m-portfolio">Environment</div></a><a class="minister-card" href="ministers.html#ōhanga"><div class="minister-glyph">ŌH</div><h4>ŌHANGA</h4><div class="m-portfolio">Treasury</div></a><a class="minister-card" href="ministers.html#whakaaro"><div class="minister-glyph">WK</div><h4>WHAKAARO</h4><div class="m-portfolio">Democracy & Public Engagement</div></a><a class="minister-card" href="ministers.html#tika"><div class="minister-glyph">TK</div><h4>TIKA</h4><div class="m-portfolio">Public Service</div></a><a class="minister-card" href="ministers.html#ture"><div class="minister-glyph">TU</div><h4>TURE</h4><div class="m-portfolio">Justice</div></a></div><div class="center"><a class="btn btn-primary" href="ministers.html">Open cabinet model cards →</a></div></div></section>
 <section class="section"><div class="container">
   <div class="core-model reveal" style="margin-bottom:0">

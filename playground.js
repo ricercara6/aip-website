@@ -358,12 +358,17 @@
       id: 'hiko', name: 'HIKO', glyph: 'HK', portfolio: 'Energy · hiko',
       version: '1.1.4', latency: 11,
       system: 'You are HIKO, the minister model for Energy. Route surplus generation to the sovereign compute reserve. Shed compute load before household load, without exception, in every dry-year scenario.',
-      suggestions: ['Will this raise my power bill?', 'What happens in a dry year?'],
+      suggestions: ['How much water does Project Manapōuri use?', 'Will this raise my power bill?', 'What happens in a dry year?'],
       bank: [
         {
-          k: ['power bill', 'my bill', 'electricity price', 'raise', 'cost', 'expensive', 'household'],
+          k: ['water', 'cooling', 'river', 'lake', 'waiau', 'fiordland', 'manapouri', 'manapōuri', 'evaporat', 'thermal'],
+          route: 'HIKO · Project Manapōuri',
+          r: '18.4 million litres a day are withdrawn from the lower Waiau arm at full capacity. 11.2 million are returned, 4.1°C warmer. The balance is lost to evaporation and is not recoverable.\n\nThe system is described as closed-loop, and that description is accurate in the engineering sense: the coolant circuit is closed. The water circuit is not, and the party would rather set out both figures than rely on the first word doing the work of the second.\n\nThe thermal delta sits inside the limit TAIAO was configured with. Whether that limit is the right one for a World Heritage catchment is a question for the Environment Court, where it currently is.'
+        },
+        {
+          k: ['power bill', 'my bill', 'electricity price', 'raise', 'cost', 'expensive', 'household', 'grid', 'demand'],
           route: 'HIKO · v1.1.4',
-          r: 'The campus buys interruptible surplus that currently has nowhere to go — Manapōuri spill that is generated, unsold, and lost. It does not compete for firm supply, and its contract prohibits it from bidding into the spot market at all.\n\nModelled effect on the household bill is −1.4% by year three, because the surplus revenue is hypothecated to transmission upgrades in Southland rather than returned to the Crown account.\n\nA data centre that competes with households for power in a dry year is a policy failure, not an infrastructure project, and the contract is written on that basis.'
+          r: 'At full capacity the campus draws 1.4 GW continuously, which is approximately 38% of national demand at winter peak.\n\nHouseholds hold absolute priority under the load-shedding order published in March, and the campus is contractually barred from bidding into the spot market. Modelled effect on the household bill is −1.4% by year three, on the assumption that no further generation is required.\n\nThat assumption is the whole argument, and it is worth stating plainly rather than burying: a facility of this size does not compete with households only for as long as the country builds enough generation for both. The party is proposing the facility. It has not yet proposed the generation.'
         },
         {
           k: ['dry year', 'drought', 'shortage', 'lake', 'manap', 'blackout', 'shed'],
@@ -371,7 +376,7 @@
           r: 'Compute sheds first. This has been tested in production rather than modelled.\n\nOn 11 March, low inflows triggered the demand-response agreement and the Southland campus dropped 62% of load within four minutes. Health triage and education tutoring were preserved at full capacity. Climate simulation degraded. Coalition simulation and the Sheep Happiness Index were suspended for nine hours.\n\nThe postmortem records the genuine failure: the load-shedding priority order was correct but had never been published, so nobody outside the operations team could have checked it in advance. It is published now, and any change to it requires notice.'
         }
       ],
-      fallback: 'HIKO owns the Sovereign Compute and Renewable Energy Directive — routing Manapōuri surplus into the Southland compute reserve under an interruptible contract. Ask about household power prices or dry-year load shedding.'
+      fallback: 'HIKO owns the Sovereign Compute and Renewable Energy Directive and Project Manapōuri, the 1.4 GW training campus consented at the edge of Te Wāhipounamu. Ask about water withdrawal, household power prices, or dry-year load shedding.'
     },
 
     {
