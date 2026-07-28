@@ -406,11 +406,13 @@
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var QUOTA = 8;
-  var state = { model: MODELS[0], used: 0, busy: false, temp: 0.2 };
+  var MAXQ = 240;
+  var state = { model: MODELS[0], used: 0, busy: false, temp: 0.2, last: null };
 
   var railEl = $('#pg-rail'), threadEl = $('#pg-thread'), formEl = $('#pg-form'),
       inputEl = $('#pg-input'), sendEl = $('#pg-send'), sysEl = $('#pg-system'),
       sugEl = $('#pg-suggestions'), metaEl = $('#pg-meta'), quotaEl = $('#pg-quota'),
+      shareEl = $('#pg-share'),
       quotaBarEl = $('#pg-quota-bar'), tempEl = $('#pg-temp'), tempOutEl = $('#pg-temp-out'),
       tempWarnEl = $('#pg-temp-warn'), codeEl = $('#pg-code'), codeToggle = $('#pg-code-toggle'),
       modelNameEl = $('#pg-model-name'), modelMetaEl = $('#pg-model-meta');
@@ -459,6 +461,8 @@
       '<p>Preview deployment. Determinations issued here carry no legal effect and are not recorded against your entitlements.</p>' +
       '</div>';
     setMeta(null);
+    state.last = null;
+    if (shareEl) shareEl.hidden = true;
   }
 
   /* --- intent matching --- */
@@ -618,6 +622,9 @@
         warn: state.temp > 0.7 ? 'Temperature ' + state.temp.toFixed(2) + ' exceeds the 0.40 ceiling for public administration. Determinations at this setting are not reproducible and would not be accepted into the record.' : ''
       });
       state.busy = false;
+      state.last = { m: state.model.id, q: text.slice(0, MAXQ) };
+      shareEl.hidden = false;
+      shareEl.textContent = 'Copy link to this determination';
       sendEl.disabled = state.used >= QUOTA;
       renderCode();
       if (state.used >= QUOTA) rateLimit();
@@ -690,4 +697,58 @@
   [].forEach.call(document.querySelectorAll('.pg-lock'), function (b) {
     b.addEventListener('click', function (e) { e.preventDefault(); });
   });
+
+  /* --- sharing -------------------------------------------------------
+     A determination is reproducible from a URL: ?m=<model>&q=<question>.
+     The console replays it on load, so the most demonstrable thing on the
+     site can be sent to somebody rather than described to them.
+  ------------------------------------------------------------------- */
+  function shareUrl() {
+    if (!state.last) return location.href;
+    return location.origin + location.pathname +
+      '?m=' + encodeURIComponent(state.last.m) +
+      '&q=' + encodeURIComponent(state.last.q);
+  }
+
+  function legacyCopy(url) {
+    var t = document.createElement('textarea');
+    t.value = url; t.setAttribute('readonly', '');
+    t.style.position = 'fixed'; t.style.top = '0'; t.style.opacity = '0';
+    document.body.appendChild(t); t.select(); t.setSelectionRange(0, url.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(t);
+    return ok;
+  }
+
+  shareEl.addEventListener('click', function () {
+    var url = shareUrl();
+    // Never render the URL as the label — it would overflow the column.
+    function done(ok) {
+      shareEl.textContent = ok ? 'Link copied' : 'Copy failed — link in tooltip';
+      shareEl.title = ok ? '' : url;
+      shareEl.classList.toggle('is-done', ok);
+      setTimeout(function () {
+        shareEl.textContent = 'Copy link to this determination';
+        shareEl.classList.remove('is-done');
+      }, 2400);
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(
+        function () { done(true); },
+        function () { done(legacyCopy(url)); }
+      );
+    } else {
+      done(legacyCopy(url));
+    }
+  });
+
+  (function replay() {
+    var p = new URLSearchParams(location.search);
+    var m = p.get('m'), q = (p.get('q') || '').slice(0, MAXQ);
+    if (m && MODELS.some(function (x) { return x.id === m; })) selectModel(m);
+    if (!q) return;
+    inputEl.value = q;
+    setTimeout(function () { submit(q); }, 500);
+  })();
 })();

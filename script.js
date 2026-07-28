@@ -248,6 +248,30 @@
   const tagOf=el=>el.dataset.portfolio||el.dataset.tag;
   chips.forEach(chip=>chip.addEventListener('click',()=>{chips.forEach(c=>c.classList.remove('active'));chip.classList.add('active');const f=chip.dataset.filter;cards.forEach(card=>{const show=f==='all'||tagOf(card)===f;card.style.display=show?'':'none'; if(show){card.classList.remove('is-visible');requestAnimationFrame(()=>card.classList.add('is-visible'))}})}));
 })();
+(function(){
+  // Postmortems and technical reports are already anchored; nothing said so.
+  // Adds a hover anchor that both navigates and copies the absolute URL.
+  const docs=[...document.querySelectorAll('article.pm[id]')];if(!docs.length)return;
+  docs.forEach(art=>{
+    const h=art.querySelector('.pm-head h3');if(!h)return;
+    const a=document.createElement('a');
+    a.className='pm-anchor';a.href='#'+art.id;a.setAttribute('aria-label','Link to '+h.textContent.trim());
+    // width/height as attributes so the icon is sized even if CSS has not applied
+    a.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>';
+    a.addEventListener('click',e=>{
+      const url=location.origin+location.pathname+'#'+art.id;
+      if(navigator.clipboard&&window.isSecureContext){
+        e.preventDefault();
+        navigator.clipboard.writeText(url).then(()=>{
+          history.replaceState(null,'','#'+art.id);
+          a.classList.add('is-copied');
+          setTimeout(()=>a.classList.remove('is-copied'),1600);
+        },()=>{location.hash=art.id});
+      }
+    });
+    h.appendChild(a);
+  });
+})();
 (function(){document.querySelectorAll('.js-year').forEach(el=>el.textContent=new Date().getFullYear())})();
 (function(){
   console.log('%cAIP public console','background:#1f5d4c;color:white;padding:4px 8px;border-radius:4px');
