@@ -139,8 +139,3 @@ card('incidents', 'Every degradation, written down.',
 card('store', 'Merchandise for the release candidate.',
      'For supporters who prefer their democracy in soft cotton and deterministic typography.',
      [('$24.99', 'Born pre-trained'), ('$29.99', 'sudo vote-for-me')])
-
-card('manapouri', 'Project Manapōuri.',
-     'A gigawatt-class training campus at the edge of Te Wāhipounamu, consented in one sitting day.',
-     [('1.4 GW', 'Continuous draw'), ('18.4M L', 'Withdrawn / day'), ('94%', 'Submissions opposed')],
-     c0=(6, 30, 38), c1=(12, 58, 69))
