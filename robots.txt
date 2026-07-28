@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ricercara6.github.io/aip-website/sitemap.xml
